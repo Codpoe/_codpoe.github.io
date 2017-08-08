@@ -17,41 +17,6 @@
 </head>
 <body>
     
-        <div class="first-screen">
-    <div class="center">
-        <h1 class="name">CODPOE</h1>
-        <h2 class="description">Front-End Developer / Life is a Poem</h2>
-        <div class="links">
-            
-                
-                    <a href="mailto:codpoe.me@gmail.com">
-                        Gmail
-                    </a>
-                
-            
-                
-                    <a href="http://weibo.com/u/2757541610/" target="_blank">
-                        Weibo
-                    </a>
-                
-            
-                
-                    <a href="https://github.com/codpoe/" target="_blank">
-                        GitHub
-                    </a>
-                
-            
-        </div>
-        <button class="entry-btn">
-            BLOG
-        </button>
-    </div>
-
-    <canvas class="triangle-canvas"></canvas>
-</div>
-
-
-    
 
     <header class="header-wrapper">
     <div class="header">
@@ -86,7 +51,7 @@
                     
                         <a 
                             href="/" 
-                            class="normal-menu menu--active"
+                            class="normal-menu "
                             target="_self">
                             home
                         </a>
@@ -144,7 +109,7 @@
                 <li>
                     <a 
                         href="/" 
-                        class="menu--active"
+                        class=""
                         target="_self">
                         home
                     </a>
@@ -197,23 +162,23 @@
                 <div class="post">
     <div class="title-wrapper">
         
-            <a class="title" href="/2017/06/06/scope-chain/">
-                JS的作用域链
+            <a class="title" href="/2016/08/02/hexo/">
+                终于又双叒叕搭建好我的博客啦
             </a>
         
         <ul class="description">
             <li>
                 <i class="fa fa-calendar"></i>
-                Jun 6, 2017
+                Aug 2, 2016
             </li>
             
                 |
                 <li>
                     <i class="fa fa-tag"></i>
                     
-                        <a href="/categories/前端">
+                        <a href="/categories/技术">
                             
-                                前端
+                                技术
                             
                         </a>
                     
@@ -224,15 +189,17 @@
     
     <div class="markdown-body">
         
-            <h2 id="知乎上的问题"><a href="#知乎上的问题" class="headerlink" title="知乎上的问题"></a>知乎上的问题</h2><p>最近在知乎上看到个有关作用域的问题，一时找不到，类似如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y = function(</span>) </span>&#123; x = <span class="number">2</span>; &#125;) &#123;</div><div class="line">   <span class="keyword">var</span> x = <span class="number">3</span>;</div><div class="line">   y();</div><div class="line">   <span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line">foo(); <span class="comment">// 3</span></div><div class="line">x <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+            <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是快速、简洁且高效的博客框架。</p>
+</blockquote>
+<p><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/hexo.PNG" alt=""><br>
         
     </div>
     
     
         <div class="more-wrapper">
             <div class="more-btn-wrapper">
-                <a href="/2017/06/06/scope-chain/">
+                <a href="/2016/08/02/hexo/">
                     <button class="more-btn">MORE</button>
                     <div class="border-top"></div>
                     <div class="border-right"></div>
@@ -247,23 +214,23 @@
                 <div class="post">
     <div class="title-wrapper">
         
-            <a class="title" href="/2017/03/17/rxjs-stream/">
-                关于RxJS的数据流
+            <a class="title" href="/2016/05/06/use-of-toolbar/">
+                Toolbar 的使用
             </a>
         
         <ul class="description">
             <li>
                 <i class="fa fa-calendar"></i>
-                Mar 17, 2017
+                May 6, 2016
             </li>
             
                 |
                 <li>
                     <i class="fa fa-tag"></i>
                     
-                        <a href="/categories/前端">
+                        <a href="/categories/Android">
                             
-                                前端
+                                Android
                             
                         </a>
                     
@@ -274,66 +241,14 @@
     
     <div class="markdown-body">
         
-            <h2 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h2><p>在写 Android 的时候，RxJava 和 RxAndroid 几乎是每个项目的标配，同时，RxJava 也是 Rx 系列里 GitHub star 数最多的，可见 Rx 在 Java 领域的普及度很高，而 RxJava 的各种文章也真心多。而在前端领域，RxJS 就相对没那么流行了。</p>
-<p>至于原因，一方面前端的各种框架 Vue 等等也可以做到类似的功能，有时候并没有必要再引入 RxJS，另一方面是 RxJS 上手有点难（当初入门 RxJava 的时候，扔物线大大的入门文章我反复看了好几遍。。。），还有就是我觉得吧，是 Java 本身的异步有点难用。。。</p>
-<p>但毋庸置疑，RxJS 的数据流操作能力是相当强大且富有想象力的。<br>
+            <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">    <span class="attr">app:title</span>=<span class="string">"Title"</span> /&gt;</span></div></pre></td></tr></table></figure>
         
     </div>
     
     
         <div class="more-wrapper">
             <div class="more-btn-wrapper">
-                <a href="/2017/03/17/rxjs-stream/">
-                    <button class="more-btn">MORE</button>
-                    <div class="border-top"></div>
-                    <div class="border-right"></div>
-                    <div class="border-bottom"></div>
-                    <div class="border-left"></div>
-                </a>
-            </div>
-        </div>
-    
-</div>
-            
-                <div class="post">
-    <div class="title-wrapper">
-        
-            <a class="title" href="/2017/02/18/ripple-effect/">
-                水波纹效果的实现
-            </a>
-        
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Feb 18, 2017
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/前端">
-                            
-                                前端
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-    
-    <div class="markdown-body">
-        
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在学 Android 开发的时候，一直很喜欢 Material Design，经常翻看官方的指南。其中有个很出众的 UI 效果 – 水波纹。Android 开发者对这个效果应当是不陌生的，可以说这是 Material Design 的一大特性了吧。</p>
-<p>个人觉得这个设计的动效还是很赞的，于是就想在前端简陋地实现一下。<br>
-        
-    </div>
-    
-    
-        <div class="more-wrapper">
-            <div class="more-btn-wrapper">
-                <a href="/2017/02/18/ripple-effect/">
+                <a href="/2016/05/06/use-of-toolbar/">
                     <button class="more-btn">MORE</button>
                     <div class="border-top"></div>
                     <div class="border-right"></div>
@@ -349,13 +264,13 @@
             <div class="prev-next-wrapper">
     
         <div class="prev">
-            <a href="/">
+            <a href="/page/2/">
                 <div class="arrow"></div>
                 <span>prev</span>
             </a>
         </div>
         <div class="next">
-            <a href="/page/2/">
+            <a href="">
                 <div class="arrow"></div>
                 <span>next</span>
             </a>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        关于RxJS的数据流
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about technology and life">
+<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    
+
+    <header class="header-wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="/">
+                <img class="logo" src="/img/logo.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                
+                    <li>
+                        
+                            <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="https://github.com/codpoe/" target="_blank" title="github">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+
+        </div>
+        <ul class="right">
+            
+                <li>
+                    
+                        <a 
+                            href="/" 
+                            class="normal-menu "
+                            target="_self">
+                            home
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <span class="category">
+                            category <i class="fa fa-angle-down"></i>
+                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                        </span>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/archives/" 
+                            class="normal-menu "
+                            target="_self">
+                            archive
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/about/" 
+                            class="normal-menu "
+                            target="_self">
+                            about
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/resume/" 
+                            class="normal-menu "
+                            target="_blank">
+                            resume
+                        </a>
+                    
+                </li>
+            
+        </ul>
+        <i class="fa fa-bars menu-bar"></i>
+    </div>
+    <ul class="mobile-menu">
+        
+            
+                <li>
+                    <a 
+                        href="/" 
+                        class=""
+                        target="_self">
+                        home
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a 
+                        href="/archives/" 
+                        class=""
+                        target="_self">
+                        archive
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/about/" 
+                        class=""
+                        target="_self">
+                        about
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/resume/" 
+                        class=""
+                        target="_blank">
+                        resume
+                    </a>
+                </li>
+            
+        
+    </ul>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <div class="title-wrapper">
+        
+            <span class="title">
+                关于RxJS的数据流
+            </span>
+        
+        <ul class="description">
+            <li>
+                <i class="fa fa-calendar"></i>
+                Mar 17, 2017
+            </li>
+            
+                |
+                <li>
+                    <i class="fa fa-tag"></i>
+                    
+                        <a href="/categories/前端">
+                            
+                                前端
+                            
+                        </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+    
+    <div class="markdown-body">
+        
+            <h2 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h2><p>在写 Android 的时候，RxJava 和 RxAndroid 几乎是每个项目的标配，同时，RxJava 也是 Rx 系列里 GitHub star 数最多的，可见 Rx 在 Java 领域的普及度很高，而 RxJava 的各种文章也真心多。而在前端领域，RxJS 就相对没那么流行了。</p>
+<p>至于原因，一方面前端的各种框架 Vue 等等也可以做到类似的功能，有时候并没有必要再引入 RxJS，另一方面是 RxJS 上手有点难（当初入门 RxJava 的时候，扔物线大大的入门文章我反复看了好几遍。。。），还有就是我觉得吧，是 Java 本身的异步有点难用。。。</p>
+<p>但毋庸置疑，RxJS 的数据流操作能力是相当强大且富有想象力的。<br><a id="more"></a></p>
+<h2 id="饿了么前端的-RxJS-入门文章"><a href="#饿了么前端的-RxJS-入门文章" class="headerlink" title="饿了么前端的 RxJS 入门文章"></a>饿了么前端的 RxJS 入门文章</h2><p>最近看了饿了么前端博客里的 RxJS 入门文章–<a href="https://fe.ele.me/let-us-learn-rxjs/" target="_blank" rel="external">让我们一起来学习 RxJS</a>，文章写得还是很易懂的，里面用『画板』这个例子初步展示了 RxJS 的强大数据流操作能力。</p>
+<p>说 Rx 就必然要说 Rx 里五花八门的操作符（operator）了。『画板』这个例子里面主要用到了<code>map</code>，<code>switchMap</code> ，<code>switchMapTo</code>，<code>bufferCount</code>这几个操作符。饿了么这篇文章并没有具体介绍这几个操作符，我就看着文档，敲着 demo，试图理解并区分这几个操作符，真的会晕。。。</p>
+<ul>
+<li><p><code>map</code></p>
+<p><code>map</code>操作符是比较常用的，用于映射数据，说白了就是对数据做操作与转换。比如把源数据<code>1, 2, 3</code>通过<code>map((data) =&gt; (data * 10))</code>转换为<code>10, 20, 30</code></p>
+</li>
+<li><p><code>switchMap</code></p>
+<p><code>switchMap</code>用于改变 Observable，应该是等同于<code>map</code>+<code>switch</code>的</p>
+</li>
+<li><p><code>switchMapTo</code></p>
+<p><code>switchMapTo</code>类似于<code>switchMap</code>，区别在于<code>switchMapTo</code>不接收参数，也就是说，它不可以对上游数据进行操作，仅仅只是改变数据流的 Observable；而<code>switchMap</code>接收参数，可以对上游数据进行操作，并据此发出相应的 Observable</p>
+</li>
+<li><p><code>bufferCount</code></p>
+<p>用于将数据按照参数的设置集合在一起。在旧版本的 RxJS 中，并没有<code>bufferCount</code>这个操作符，但是有<code>bufferWithCount</code>，作用是一样的。<code>bufferCount</code>可接收两个参数，第一个参数是数据集合的大小，第二个参数是跳过的数据的数量。第二个参数是可选的。举个栗子：设源数据是<code>1, 2, 3</code>，经过<code>bufferCount(2, 1)</code>之后，得到的数据就是<code>[1, 2], [2, 3]</code></p>
+</li>
+</ul>
+<h2 id="问题来了"><a href="#问题来了" class="headerlink" title="问题来了"></a>问题来了</h2><p>按照饿了么文章提到的思路，我就去按瓢画葫芦了。代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> down$ = Rx.Observable.fromEvent(canvas, <span class="string">"mousedown"</span>)</div><div class="line">	.map(<span class="function">(<span class="params">ev</span>) =&gt;</span> (<span class="string">"down"</span>));</div><div class="line"><span class="keyword">let</span> up$ = Rx.Observable.fromEvent(canvas, <span class="string">"mouseup"</span>)</div><div class="line">	.map(<span class="function">(<span class="params">ev</span>) =&gt;</span> (<span class="string">"up"</span>));</div><div class="line"><span class="keyword">let</span> move$ = Rx.Observable.fromEvent(canvas, <span class="string">"mousemove"</span>);</div><div class="line"> </div><div class="line">down$.merge(up$)</div><div class="line">    .switchMap(<span class="function">(<span class="params">action</span>) =&gt;</span> </div><div class="line">		(action === <span class="string">"down"</span> ? move$ : Rx.Observable.empty()))</div><div class="line">    .map(<span class="function">(<span class="params">ev</span>) =&gt;</span> (&#123;</div><div class="line">		offsetX: ev.offsetX,</div><div class="line">		offsetY: ev.offsetY</div><div class="line">	&#125;))</div><div class="line">	.bufferCount(<span class="number">2</span>, <span class="number">1</span>)</div><div class="line">	.subscribe(</div><div class="line">		(res) =&gt; &#123;</div><div class="line">			ctx.moveTo(res[<span class="number">0</span>].offsetX, res[<span class="number">0</span>].offsetY);</div><div class="line">			ctx.lineTo(res[<span class="number">1</span>].offsetX, res[<span class="number">1</span>].offsetY);</div><div class="line">			ctx.stroke();</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure></p>
+<p>好像没什么问题，但是在测试的时候，发现后面画的线总是会和前面的线连在一起，如图所示：<br><img src="https://ww1.sinaimg.cn/large/006tNc79gy1fdr0mkjsimg30bn05zb2b.gif" alt=""></p>
+<p>这好像与原意不符啊，原本想要的效果是每次画的线要分开的。那么问题来了，到底哪个环节出了差错呢？一脸懵 B。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>想了想，前面的线跟后面的连在一起，应该是成对出现的坐标出了问题，导致上一次画线的末尾坐标跟下一下画线的初始坐标配对了，那么是数据流出现了问题吧。那就捋一捋数据流吧。</p>
+<p>鼠标按下，触发<code>mousedown</code>事件，发射出<code>down</code>，但未松开鼠标，所以没有触发<code>mouseup</code>事件，也就没有将数据改成<code>[&quot;down&quot;, &quot;up&quot;]</code>，接下来鼠标按着移动，数据经过<code>switchMapTo</code>变换，Observable 变成了<code>mousemove</code>，画了一会，鼠标松开，触发<code>mouseup</code>事件，发射出<code>up</code>…</p>
+<p>形象地，实际的数据流为：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">down$</span>:       down-------------down--------</div><div class="line"><span class="symbol">up$</span>:         -----------up----------------</div><div class="line"><span class="symbol">merge</span>:       -----------up----down--------</div><div class="line"><span class="keyword">switchMapTo: </span><span class="keyword">move0-move1------move2-move3-</span></div><div class="line"><span class="keyword">bufferCount: </span>[<span class="keyword">move0, </span><span class="keyword">move1]-[move1, </span><span class="keyword">move2]-[move2, </span><span class="keyword">move3]</span></div><div class="line"><span class="keyword"> </span></div><div class="line"><span class="symbol">result</span>:      [<span class="keyword">move0, </span><span class="keyword">move1]-[move1, </span><span class="keyword">move2]-[move2, </span><span class="keyword">move3]</span></div></pre></td></tr></table></figure>
+<p>然而按照预期想法，<code>move0, move1</code>应是同一条线上的，<code>move2, move3</code>是另一条线上的，所以预期的数据流应是这样的：</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result: <span class="string">[move0, move1]</span>-<span class="string">[move2, move3]</span></div></pre></td></tr></table></figure>
+<p>这显然和实际情况不符，这就是问题所在：<code>bufferCount</code>错误地将两个原本不应该在一起的坐标合并了。所以要解决这个问题，就要改变<code>bufferCount</code>的位置。</p>
+<p>具体地说，就是不能在主数据流里用<code>bufferCount</code>，而应该在每次都是新发射出的<code>mousemove</code>数据流里用，先使坐标们正确地合并在一起，然后才发射到主数据流上。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">down$</span>:       down-------------down--------</div><div class="line"><span class="symbol">up$</span>:         -----------up----------------</div><div class="line"><span class="symbol">merge</span>:       -----------up----down--------</div><div class="line"><span class="keyword">switchMapTo: </span><span class="keyword">move0-move1------move2-move3-</span></div><div class="line"><span class="keyword">- </span><span class="keyword">bufferCount:</span></div><div class="line"><span class="keyword"> </span>            [<span class="keyword">move0, </span><span class="keyword">move1]-[move2, </span><span class="keyword">move3]</span></div><div class="line"><span class="keyword"> </span></div><div class="line"><span class="symbol">result</span>:      [<span class="keyword">move0, </span><span class="keyword">move1]-[move2, </span><span class="keyword">move3]</span></div></pre></td></tr></table></figure>
+<p>根据上面这个数据流，修改代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> down$ = Rx.Observable.fromEvent(canvas, <span class="string">"mousedown"</span>)</div><div class="line">	.map(<span class="function">(<span class="params">ev</span>) =&gt;</span> (<span class="string">"down"</span>));</div><div class="line"><span class="keyword">let</span> up$ = Rx.Observable.fromEvent(canvas, <span class="string">"mouseup"</span>)</div><div class="line">	.map(<span class="function">(<span class="params">ev</span>) =&gt;</span> (<span class="string">"up"</span>));</div><div class="line"><span class="keyword">let</span> move$ = Rx.Observable.fromEvent(canvas, <span class="string">"mousemove"</span>)</div><div class="line">	.map(<span class="function">(<span class="params">ev</span>) =&gt;</span> (&#123;</div><div class="line">		offsetX: ev.offsetX,</div><div class="line">		offsetY: ev.offsetY</div><div class="line">	&#125;))</div><div class="line">	.bufferCount(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// 此操作符的位置很关键</span></div><div class="line"> </div><div class="line">down$.merge(up$)</div><div class="line">	.switchMap(<span class="function">(<span class="params">action</span>) =&gt;</span> </div><div class="line">		(action === <span class="string">"down"</span> ? move$ : Rx.Observable.empty()))</div><div class="line">	.subscribe(</div><div class="line">		(res) =&gt; &#123;</div><div class="line">			ctx.moveTo(res[<span class="number">0</span>].offsetX, res[<span class="number">0</span>].offsetY);</div><div class="line">			ctx.lineTo(res[<span class="number">1</span>].offsetX, res[<span class="number">1</span>].offsetY);</div><div class="line">			ctx.stroke();</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
+<p>最终效果如下：<br><img src="https://ww4.sinaimg.cn/large/006tNc79ly1fdsnhe4pq8g30bo05y7wi.gif" alt=""></p>
+<p>其实后来看了饿了么这篇文章 Demo 的代码，也是这样的。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>通过这个『画板』的栗子，可以看出 RxJS 强大的数据操作能力，但是也要时刻注意代码所表示的数据流是否真的如你的预期，所以要注意操作符序列的顺序。最后，画数据流图会有很大帮助。</p>
+
+        
+    </div>
+    
+    
+</div>
+            <div class="prev-next-wrapper">
+    
+        <div class="prev">
+            <a href="/2017/06/06/scope-chain/">
+                <div class="arrow"></div>
+                <span>newer</span>
+            </a>
+        </div>
+        <h1 class="prev-next-title"></h1>
+        <div class="next">
+            <a href="/2017/02/18/ripple-effect/">
+                <div class="arrow"></div>
+                <span>older</span>
+            </a>
+        </div>
+    
+</div>
+
+<script>
+    var prev = document.querySelector('.prev a');
+    var next = document.querySelector('.next a');
+    var title = document.querySelector('.prev-next-title');
+
+    if (title) {
+        prev.addEventListener('mouseover', function(ev) {
+            title.innerHTML = 'JS的作用域链';
+            title.classList.add('prev-next-title--slide-right');
+        });
+        prev.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-right');
+        });
+
+        next.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '水波纹效果的实现';
+            title.classList.add('prev-next-title--slide-left');
+        });
+        next.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-left');
+        });
+    }
+</script>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2017/03/17/rxjs-stream/';
+            this.page.identifier = '2017/03/17/rxjs-stream/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="">Poem</a>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>

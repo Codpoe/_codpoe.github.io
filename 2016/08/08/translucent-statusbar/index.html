@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        Translucent StatusBar 的一点实践总结
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about technology and life">
+<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    
+
+    <header class="header-wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="/">
+                <img class="logo" src="/img/logo.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                
+                    <li>
+                        
+                            <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="https://github.com/codpoe/" target="_blank" title="github">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+
+        </div>
+        <ul class="right">
+            
+                <li>
+                    
+                        <a 
+                            href="/" 
+                            class="normal-menu "
+                            target="_self">
+                            home
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <span class="category">
+                            category <i class="fa fa-angle-down"></i>
+                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                        </span>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/archives/" 
+                            class="normal-menu "
+                            target="_self">
+                            archive
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/about/" 
+                            class="normal-menu "
+                            target="_self">
+                            about
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/resume/" 
+                            class="normal-menu "
+                            target="_blank">
+                            resume
+                        </a>
+                    
+                </li>
+            
+        </ul>
+        <i class="fa fa-bars menu-bar"></i>
+    </div>
+    <ul class="mobile-menu">
+        
+            
+                <li>
+                    <a 
+                        href="/" 
+                        class=""
+                        target="_self">
+                        home
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a 
+                        href="/archives/" 
+                        class=""
+                        target="_self">
+                        archive
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/about/" 
+                        class=""
+                        target="_self">
+                        about
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/resume/" 
+                        class=""
+                        target="_blank">
+                        resume
+                    </a>
+                </li>
+            
+        
+    </ul>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <div class="title-wrapper">
+        
+            <span class="title">
+                Translucent StatusBar 的一点实践总结
+            </span>
+        
+        <ul class="description">
+            <li>
+                <i class="fa fa-calendar"></i>
+                Aug 8, 2016
+            </li>
+            
+                |
+                <li>
+                    <i class="fa fa-tag"></i>
+                    
+                        <a href="/categories/Android">
+                            
+                                Android
+                            
+                        </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+    
+    <div class="markdown-body">
+        
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>以下所说，基于 <code>minSdkVersion 21</code>。</p>
+</blockquote>
+<p>Android 4.4 之前，所有 App 的顶部都是黑漆漆的一条状态栏，跟多彩的 App 内容显得比较不搭，以至于很多人因此说 Android 的 App 丑，比不上 iOS 的美。这也似乎是事实。但从 4.4 开始，Android 引入了透明状态栏的概念，于是乎各路开发纷纷上了透明状态栏的车，实现方式「百花齐放，百家争鸣」，得到的效果也不尽相同。<br><a id="more"></a></p>
+<h2 id="StatusBar-对比"><a href="#StatusBar-对比" class="headerlink" title="StatusBar 对比"></a>StatusBar 对比</h2><p>目前市面上的 App 常见的 StatusBar 有三种：</p>
+<ul>
+<li><p>黑黑黑<br>例如京东：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/black-statusbar.png-blogsize" alt="京东"> </p>
+<p>现在 Android 7.0 都已经发布了，为什么还有不少 App 是黑黑的一条状态栏呢？因为透明状态栏坑多啊，为了更广的 App 用户，有的数据说现在 Android 5.0 以下的用户比例还挺大的，以至于很多人都不想去适配。讲真，开发个人项目的话，我都不想去适配 4.4，直接 <code>minSdkVersion 21</code>。</p>
+</li>
+<li><p>完全透明的<br>现在很多 App 都有这个效果了，例如，网易云音乐：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/neteasy-music.jpg-twopage" alt="网易云音乐"></p>
+<p>还有 Bilibili：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/bilibili-statusbar.jpg-twopage" alt="Bilibili"></p>
+<p>仔细对比网易云音乐和 Bilibili 的状态栏，其实不难发现，即便二者的状态栏看似都是透明的，但是当打开 Drawer 之后还是能看出，Bilibili 的状态栏蒙上了一层半透明的遮罩。从实现的角度看，Bilibili 的状态栏实现方案应该属于下面所说的半透明状态栏。至于为何当 Drawer 关闭的时候 Bilibili 的状态栏看起来跟网易云的透明状态栏一样，就留给下面的实践环节来说了。</p>
+</li>
+<li><p>半透明的<br>例如，酷市场：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/ku-market.jpg-twopage" alt="酷市场"></p>
+<p>酷市场的状态栏应该是谷歌规范的了，但我个人认为 Google Play 的状态栏应该是 Material design 状态栏的最佳栗子：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/google-play-statusbar.jpg-twopage" alt="Google Play"></p>
+<p>在 Google Play 中，普通页面（单纯的 Toolbar）和 DrawerLayout  的 StatusBar 都是半透明的，而带有 <code>CollapsingToolbarLayout</code> 的页面的 StatusBar 则是 <code>colorPrimaryDark</code>。</p>
+</li>
+</ul>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="之前"><a href="#之前" class="headerlink" title="之前"></a>之前</h3><p>其实我一开始搞状态栏是奔着 iOS 去的，怎么像 iOS 就怎么来，也就是上面所说的完全透明的状态栏，类似于网易云音乐。完全透明状态栏的实现方式并不复杂，在 Activity 的 <code>setContentView(R.layout.activityname);</code> 之前加入：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) &#123;</div><div class="line">    Window window = getWindow();</div><div class="line">    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);</div><div class="line">    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS</div><div class="line">            | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);</div><div class="line">    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN</div><div class="line">            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</div><div class="line">            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);</div><div class="line">    window.setStatusBarColor(Color.TRANSPARENT);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>就可以实现 App 全局透明状态栏，不管是普通页面还是 DrawerLayout。但这样的话，整个界面、所有的控件都会上移，以至于可能 Toolbar 被状态栏遮挡。解决方法也很简单，调整控件的位置就好，举个栗子，为了把 Toolbar 移回正常的位置，我之前的做法是给把 Toolbar 嵌入到 AppBarLayout 中，然后给 Toolbar 设置一个 <code>layout_marginTop</code>：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">app:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/circular_anim_toolbar"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:popupTheme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_marginTop</span>=<span class="string">"24dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:navigationIcon</span>=<span class="string">"@drawable/ic_arrow_back_white_24dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:title</span>=<span class="string">"CircularAnim"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.AppBarLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>最近发现，这种方法有个严重弊端就是，想实现 Toolbar 的滑动隐藏是比较麻烦的，所以改用另一种方法，在 Toolbar 上放置一个高度为当前状态栏高度的、跟 Toolbar 颜色一致的 View。</p>
+<blockquote>
+<p>为什么不直接 <code>fitsSystemWindows=&quot;true&quot;</code>？</p>
+</blockquote>
+<p>试下就知道了，虽然 <code>fitsSystemWindows</code> 确实可以将控件移回正常的位置，但状态栏就变成 Activity 的背景色了。例如下图的背景色是白色，状态栏就也就变成了白茫茫一片：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/white-statusbar.png-blogsize" alt="白色状态栏"></p>
+<p>更新：突然发现，如果根部局是 <code>CoordinatorLayout</code> 的话，状态栏的颜色会变成 <code>colorPrimaryDark</code>。不过！不过！有个很奇葩的地方，注意看图：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/dark-statusbar-1.png" alt=""></p>
+<p>应该不难看到，状态栏和 Toolbar 之间有着还算明显的阴影，感觉就像 Toolbar 的 z 轴位置高于状态栏的。<br>(°ー°〃)</p>
+<p>还需要说明的是，实测在 Smartisan OS、Flyme、氢OS 上，只需在 <code>styles.xml</code> 的 <code>AppTheme</code> 中加入：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowTranslucentStatus"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>就可以实现透明状态栏，而在原生上则是半透明的。两种解决方案相对而言，我比较喜欢后一个，因为优雅一点，只需改 styles，而不用在 Java 代码中写一堆东西。现在帮助实现透明状态栏的工具类/库有很多，推荐一个功能很强大的：<a href="https://github.com/laobie/StatusBarUtil" target="_blank" rel="external">StatusBarUtil</a>，不仅仅可以调透明状态栏，大致的原理是上面说的置顶 view。当然最好自己实现啦，比较自由一点，什么都是可控的。</p>
+<h3 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h3><p>我一直觉得，为了个状态栏，而特意去调整我的布局 xml 和加一堆 Java 代码是不优雅的，按 Android 原来的样子来应是最好的。当然啦，往往事与愿违，需求若是这样，你就不得不按需求来。那么，问题来了，优雅的状态栏应是怎么实现呢？我觉得吧：</p>
+<blockquote>
+<p>能在 <code>styles.xml</code> 的 <code>AppTheme</code> 里实现的，尽量在这里面实现。</p>
+</blockquote>
+<ol>
+<li><p>先在 <code>values</code> 目录下的 <code>styles.xml</code> 定义一个 <code>Base.AppTheme</code> 作为基础：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Base.AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">     <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></div><div class="line"><span class="xml">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="xml">     <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>然后定义 <code>AppTheme</code> 和 <code>AppTheme.Translucent</code>：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Base.AppTheme"</span> /&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme.Translucent"</span> <span class="attr">parent</span>=<span class="string">"Base.AppTheme"</span>/&gt;</span><span class="undefined"></span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>再在 <code>values-v21</code> 目录下的 <code>styles.xml</code> 中重新定义 <code>AppTheme.Translucent</code>：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme.Translucent"</span> <span class="attr">parent</span>=<span class="string">"Base.AppTheme"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="xml">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowTranslucentStatus"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>注意的是，无论你在哪个 SDK 版本的 <code>values</code> 目录下的 <code>styles.xml</code> 新建了主题，都要在最基础的 <code>values</code> 目录下的 <code>styles.xml</code> 定义一个同名主题，否则可能会报错。</p>
+</li>
+<li><p>最后在 <code>AndroidManifest.xml</code> 中，修改需要透明状态栏的 Activity：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="name">activity</span></span></div><div class="line"><span class="tag">      <span class="attr">android:name</span>=<span class="string">".RecyclerViewActivity"</span></span></div><div class="line"><span class="tag">      <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme.Translucent"</span> &gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>何谓<strong>需要透明状态栏的 Activity</strong> ？我自己的原则是：</p>
+<ul>
+<li>一般的页面（即单纯的 <code>Toolbar</code> 或者 <code>AppBarLayout</code>），用默认的 <code>AppTheme</code>。</li>
+<li><code>DrawerLayout</code> 或者包含有 <code>CollapsingToolbarLayout</code> 的，用 <code>AppTheme.Translucent</code>。<br>例如酷市场，这几种页面就都有了，复杂一点。</li>
+</ul>
+<p>为什么上面的第二种情况就要用 <code>AppTheme.Translucent</code>呢？因为比较符合规范、漂亮，最重要的一点是实现所需的效果也比较简单、优雅，但有点小坑要注意，下节详说。</p>
+</li>
+</ol>
+<h3 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h3><ul>
+<li><p>DrawerLayout<br>当给根布局为 <code>DrawerLayout</code> 的 Activity 主题设为 <code>AppTheme.Translucent</code> 时，按道理说，应该要调整 <code>DrawerLayout</code> 的 content 的控件位置，也的确要如此，但这何来优雅？其实只要在 <code>DrawerLayout</code> 的布局中加上：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fitsSystemWindows="true"</div></pre></td></tr></table></figure>
+<p>就可以不调整控件了，实现的效果看如图：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/statusbar-3.gif-blogsize" alt=""></p>
+<p>可以看到，状态栏是半透明的。</p>
+</li>
+<li><p>CollapsingToolbarLayout<br><code>CollapsingToolbarLayout</code> 的一个主要功能是实现背景（往往是图片）与 <code>Toolbar</code> 的视差滚动。当布局中包含有 <code>CollapsingToolbar</code> 时，设置 <code>fitsSystemWindows=&quot;true&quot;</code> 的地方还应该是根部局吗？非也，很奇怪的，应该把 <code>fitsSystemWindows=&quot;true&quot;</code> 设置在 <code>CollapsingToolbarLayout</code> 里面的 <code>ImageView</code>：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">     <span class="attr">android:id</span>=<span class="string">"@+id/rv_shared_img"</span></span></div><div class="line"><span class="tag">     <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">     <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></span></div><div class="line"><span class="tag">     <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">     <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span></span></div><div class="line"><span class="tag">     <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">     <span class="attr">android:src</span>=<span class="string">"@drawable/croatian_coast"</span> /&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/statusbar-2.gif-blogsize" alt=""></p>
+<p> 而且 Toolbar 折叠之后可以明显分出 <code>colorPrimary</code> 和 <code>colorPrimaryDark</code>，并且继续滑动的话，能正常地隐藏 Toolbar，而状态栏的颜色依旧为 <code>colorPrimaryDark</code>，这很好，很 Toolbar，这才是 Android App 该有的样子啊。</p>
+<blockquote>
+<p>2016-8-13 更新：<br> 实测在一加 3 的氢 OS 上完美运行，上面的效果图就来自氢 OS，但昨天我刷了氧 OS 之后再运行 Demo 时，发现 DrawerLayout 和 CollapsingToolbarLayout 的状态栏颜色太深了，蓦地想起 styles.xml 里的<code>windowTranslucentStatus</code>，translucent 是半透明的意思，难道是这个出问题？我就把<code>&lt;item name=&quot;android:windowTranslucentStatus&quot;&gt;true&lt;/item&gt;</code>换成了<code>&lt;item name=&quot;android:statusBarColor&quot;&gt;@android:color/transparent&lt;/item&gt;</code>，终于完美了。</p>
+</blockquote>
+<p> 应该是大多数定制度高的国产 ROM 把<code>windowTranslucentStatus</code>的半透明改成完全透明了，而接近原生的 ROM 则保留原汁原味，果真是个坑啊。</p>
+<h3 id="说说-B-站"><a href="#说说-B-站" class="headerlink" title="说说 B 站"></a>说说 B 站</h3><p>前面已经说过，B 站的状态栏虽然看起来是完全透明的，可当你打开 Drawer 时会发现，这什么鬼，Drawer 上的状态栏怎么是半透明的，说好的完全透明呢？再看一次图吧：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/bilibili-statusbar.jpg-twopage" alt="Bilibili"></p>
+<p>B 站真是够独辟蹊径的，其实这种效果的实现方式跟上面所说的是一样样的，只不过，B 站把 <code>colorPrimary</code> 和 <code>colorPrimaryDark</code> 的颜色设为一样了，机智，服_(: 」∠)_</p>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>又到了轻松的推荐环节啦，感觉写博客比写代码累啊，搞这些图片、Gif 图都搞了好久。接下来的几天就写写代码好了(ง •_•)ง</p>
+<ul>
+<li><a href="http://www.jianshu.com/p/0acc12c29c1b" target="_blank" rel="external">Android开发：Translucent System Bar 的最佳实践</a></li>
+<li><a href="https://github.com/laobie/StatusBarUtil" target="_blank" rel="external">StatusBarUtil</a></li>
+</ul>
+
+        
+    </div>
+    
+    
+</div>
+            <div class="prev-next-wrapper">
+    
+        <div class="prev">
+            <a href="/2016/08/22/smiling-face-view/">
+                <div class="arrow"></div>
+                <span>newer</span>
+            </a>
+        </div>
+        <h1 class="prev-next-title"></h1>
+        <div class="next">
+            <a href="/2016/08/02/hexo/">
+                <div class="arrow"></div>
+                <span>older</span>
+            </a>
+        </div>
+    
+</div>
+
+<script>
+    var prev = document.querySelector('.prev a');
+    var next = document.querySelector('.next a');
+    var title = document.querySelector('.prev-next-title');
+
+    if (title) {
+        prev.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '仿支付宝的刷新View--SmilingFaceView';
+            title.classList.add('prev-next-title--slide-right');
+        });
+        prev.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-right');
+        });
+
+        next.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '终于又双叒叕搭建好我的博客啦';
+            title.classList.add('prev-next-title--slide-left');
+        });
+        next.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-left');
+        });
+    }
+</script>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2016/08/08/translucent-statusbar/';
+            this.page.identifier = '2016/08/08/translucent-statusbar/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="">Poem</a>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>

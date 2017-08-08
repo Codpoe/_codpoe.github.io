@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        JS的作用域链
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about technology and life">
+<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    
+
+    <header class="header-wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="/">
+                <img class="logo" src="/img/logo.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                
+                    <li>
+                        
+                            <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="https://github.com/codpoe/" target="_blank" title="github">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+
+        </div>
+        <ul class="right">
+            
+                <li>
+                    
+                        <a 
+                            href="/" 
+                            class="normal-menu "
+                            target="_self">
+                            home
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <span class="category">
+                            category <i class="fa fa-angle-down"></i>
+                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                        </span>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/archives/" 
+                            class="normal-menu "
+                            target="_self">
+                            archive
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/about/" 
+                            class="normal-menu "
+                            target="_self">
+                            about
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/resume/" 
+                            class="normal-menu "
+                            target="_blank">
+                            resume
+                        </a>
+                    
+                </li>
+            
+        </ul>
+        <i class="fa fa-bars menu-bar"></i>
+    </div>
+    <ul class="mobile-menu">
+        
+            
+                <li>
+                    <a 
+                        href="/" 
+                        class=""
+                        target="_self">
+                        home
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a 
+                        href="/archives/" 
+                        class=""
+                        target="_self">
+                        archive
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/about/" 
+                        class=""
+                        target="_self">
+                        about
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/resume/" 
+                        class=""
+                        target="_blank">
+                        resume
+                    </a>
+                </li>
+            
+        
+    </ul>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <div class="title-wrapper">
+        
+            <span class="title">
+                JS的作用域链
+            </span>
+        
+        <ul class="description">
+            <li>
+                <i class="fa fa-calendar"></i>
+                Jun 6, 2017
+            </li>
+            
+                |
+                <li>
+                    <i class="fa fa-tag"></i>
+                    
+                        <a href="/categories/前端">
+                            
+                                前端
+                            
+                        </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+    
+    <div class="markdown-body">
+        
+            <h2 id="知乎上的问题"><a href="#知乎上的问题" class="headerlink" title="知乎上的问题"></a>知乎上的问题</h2><p>最近在知乎上看到个有关作用域的问题，一时找不到，类似如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y = function(</span>) </span>&#123; x = <span class="number">2</span>; &#125;) &#123;</div><div class="line">   <span class="keyword">var</span> x = <span class="number">3</span>;</div><div class="line">   y();</div><div class="line">   <span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line">foo(); <span class="comment">// 3</span></div><div class="line">x <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>其实这个是阮老师的《ES6 入门》里的一个例子。知乎提问者对于这段代码的疑问点是「执行 y() 之后，为什么还是输出 3 ?」，其实阮老师已经解释得比较清楚了（这是<a href="http://es6.ruanyifeng.com/#docs/function" target="_blank" rel="external">传送门</a>），但是这里也牵扯到了作用域的问题，加上最近自己有看相关的资料，就再写一下下，加深理解。</p>
+<h2 id="作用域和作用域链"><a href="#作用域和作用域链" class="headerlink" title="作用域和作用域链"></a>作用域和作用域链</h2><p>和 C，Java 等许多语言不同的是，ES5 只有两种作用域 —- 全局作用域和函数作用域。每个执行环境都有一个表示变量的对象 —- 变量对象。简单来说，一个作用域对应于一个变量对象，作用域就是变量的集合。所以，作用域链就是变量对象的有序集合。</p>
+<p>按照红宝书的说法，全局环境的变量对象始终存在，而像函数这样的局部环境的变量对象，则只在函数执行的过程中存在。在<strong>创建函数</strong>时，会先创建预先包含<strong>指向全局变量对象的指针</strong>的作用域链。当<strong>函数被调用</strong>时，会创建当前函数的执行环境，这个执行环境会有个指针指向上面所说的在函数创建时就一并创建的作用域链。此后，还会创建一个当前的活动对象，包含<code>this</code>和<code>arguments</code>等，并将<strong>其指针</strong>推入作用域链的前端。这就是作用域链的本质 —- 变量对象的指针的链式集合，也就是说作用域链只引用变量对象，并不直接保存变量对象。</p>
+<p>也就是说 JavaScript 是<strong>词法作用域</strong>的，不过要注意的是，指向<strong>包含<code>this</code>和<code>arguments</code>的活动对象</strong>的指针是在函数调用时才被推入作用域链的，所以一般情况下<code>this</code>的指向由函数调用时决定。</p>
+<h2 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a><code>this</code>的指向</h2><p>既然上一节讲到了<code>this</code>，这里就插一点这部分的内容。关于<code>this</code>指向的理解，我是这么认为的：所谓函数，<strong>天生就是让别人调用的</strong>，这可以说是很本质的了。很直观嘛，谁调用的就指向谁，JS 就是那么爽快。但是事情总是有另一面，在 Java 的世界，方法好像总是定义在类里面的？所以<code>this</code>总是指向所在类的实例，也很直观。问题来了，JS 天生灵活，其函数是可以被提取出来的，也可以通过<code>call()</code>和<code>apply()</code>等方法改变函数执行时的<code>this</code>，但万变不离其宗，JS 的<code>this</code>始终还是指向<strong>最终的调用者</strong>。</p>
+<h2 id="关于-ES6-的参数作用域"><a href="#关于-ES6-的参数作用域" class="headerlink" title="关于 ES6 的参数作用域"></a>关于 ES6 的参数作用域</h2><p>前段时间有同学在阮老师的评论里跟阮老师争论关于 ES6 的参数作用域的问题，最来阮老师修改了文章中有关作用域的内容。按<a href="http://code.wileam.com/default-value-n-params-env/" target="_blank" rel="external">那位同学后来写的博客</a>里面的说法：</p>
+<blockquote>
+<p>如果参数存在默认值，则有三个环境 environment( environment in ES6 = scope in ES5). Outer environment / parameters environment / function body environment.<br>parameters environment 可以访问自己和外层，不能访问函数体内的变量。<br>函数体内可以修改 parameters env 里定义的 formal parameters 的值，不能重新定义（除非用var……）。</p>
+</blockquote>
+<p>但是这里我认为这里说得有一点小问题。看下规格原文：</p>
+<blockquote>
+<p>9.2.12 FunctionDeclarationInstantiation<br>If the function’s formal parameters do not include any default value initializers then the body declarations are instantiated in the same Environment Record as the parameters. If default value parameter initializers exist, a second Environment Record is created for the body declarations. Formal parameters and functions are initialized as part of FunctionDeclarationInstantiation. All other bindings are initialized during evaluation of the function body.</p>
+</blockquote>
+<p>注意了，原文是<code>default value initializers</code>，而不是<code>default value</code>，所以我认为那位同学的说法在文字上有点问题。看下这个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y = function(</span>) </span>&#123; x = <span class="number">2</span>; &#125;) &#123;</div><div class="line">   <span class="keyword">var</span> x = <span class="number">3</span>;</div><div class="line">   y();</div><div class="line">   <span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line">foo(<span class="literal">undefined</span>, () =&gt; &#123; x = <span class="number">4</span>; &#125;); <span class="comment">// 3</span></div><div class="line">x <span class="comment">// 4</span></div></pre></td></tr></table></figure></p>
+<p>显然，这里 y 里面的 x 指向全局 x，而不是参数 x，所以这里的参数作用域没有起作用，或者说这时候压根就不存在参数作用域。这个例子跟一开始的例子的区别只是，在调用 foo 时就已经给 y 传递了一个函数。而参数默认值的赋值行为只发生在没有传参或传递<code>undefined</code>的时候，也就是说 y 的默认初始化行为并没有发生。举这个无厘头的例子只是想说明，只有发生<strong>参数默认值的初始化</strong>时，参数作用域才会存在，而不是<strong>存在参数默认值</strong>就会有参数作用域。</p>
+<p>这个例子有点扯淡，本来很直观的事情被这么一搞就懵了，其实我只是举个栗子说明下那位同学的说法的一点问题而已。</p>
+
+        
+    </div>
+    
+    
+</div>
+            <div class="prev-next-wrapper">
+    
+        <div class="prev">
+            <a href="">
+                <div class="arrow"></div>
+                <span>newer</span>
+            </a>
+        </div>
+        <h1 class="prev-next-title"></h1>
+        <div class="next">
+            <a href="/2017/03/17/rxjs-stream/">
+                <div class="arrow"></div>
+                <span>older</span>
+            </a>
+        </div>
+    
+</div>
+
+<script>
+    var prev = document.querySelector('.prev a');
+    var next = document.querySelector('.next a');
+    var title = document.querySelector('.prev-next-title');
+
+    if (title) {
+        prev.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '';
+            title.classList.add('prev-next-title--slide-right');
+        });
+        prev.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-right');
+        });
+
+        next.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '关于RxJS的数据流';
+            title.classList.add('prev-next-title--slide-left');
+        });
+        next.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-left');
+        });
+    }
+</script>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2017/06/06/scope-chain/';
+            this.page.identifier = '2017/06/06/scope-chain/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="">Poem</a>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        水波纹效果的实现
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about technology and life">
+<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    
+
+    <header class="header-wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="/">
+                <img class="logo" src="/img/logo.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                
+                    <li>
+                        
+                            <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="https://github.com/codpoe/" target="_blank" title="github">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+
+        </div>
+        <ul class="right">
+            
+                <li>
+                    
+                        <a 
+                            href="/" 
+                            class="normal-menu "
+                            target="_self">
+                            home
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <span class="category">
+                            category <i class="fa fa-angle-down"></i>
+                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                        </span>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/archives/" 
+                            class="normal-menu "
+                            target="_self">
+                            archive
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/about/" 
+                            class="normal-menu "
+                            target="_self">
+                            about
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/resume/" 
+                            class="normal-menu "
+                            target="_blank">
+                            resume
+                        </a>
+                    
+                </li>
+            
+        </ul>
+        <i class="fa fa-bars menu-bar"></i>
+    </div>
+    <ul class="mobile-menu">
+        
+            
+                <li>
+                    <a 
+                        href="/" 
+                        class=""
+                        target="_self">
+                        home
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a 
+                        href="/archives/" 
+                        class=""
+                        target="_self">
+                        archive
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/about/" 
+                        class=""
+                        target="_self">
+                        about
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/resume/" 
+                        class=""
+                        target="_blank">
+                        resume
+                    </a>
+                </li>
+            
+        
+    </ul>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <div class="title-wrapper">
+        
+            <span class="title">
+                水波纹效果的实现
+            </span>
+        
+        <ul class="description">
+            <li>
+                <i class="fa fa-calendar"></i>
+                Feb 18, 2017
+            </li>
+            
+                |
+                <li>
+                    <i class="fa fa-tag"></i>
+                    
+                        <a href="/categories/前端">
+                            
+                                前端
+                            
+                        </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+    
+    <div class="markdown-body">
+        
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在学 Android 开发的时候，一直很喜欢 Material Design，经常翻看官方的指南。其中有个很出众的 UI 效果 – 水波纹。Android 开发者对这个效果应当是不陌生的，可以说这是 Material Design 的一大特性了吧。</p>
+<p>个人觉得这个设计的动效还是很赞的，于是就想在前端简陋地实现一下。<br><a id="more"></a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="内容本体和水波纹效果分开"><a href="#内容本体和水波纹效果分开" class="headerlink" title="内容本体和水波纹效果分开"></a>内容本体和水波纹效果分开</h3><p>若一个内容（div, button 等）想加入水波纹的效果，只需加个<code>class</code>–<code>ripple-effect</code>。如果不分开的话，每个想实现水波纹效果的地方都必须加上相同的水波纹 View，再说了，水波纹应是广泛通用的。所以应该把水波纹提取出来，单独作为一个 class 来使用。</p>
+<h3 id="内容本体"><a href="#内容本体" class="headerlink" title="内容本体"></a>内容本体</h3><p>为了实现水波纹叠加在内容本体之上，水波纹应该是绝对定位的，而绝对定位是相对于最近一个使用了定位的父节点来说的，所以内容本体用到了定位<code>position: relative</code>。</p>
+<p>其实 Android 里面是有两种水波纹效果的</p>
+<ul>
+<li><p>有边界</p>
+<p><img src="https://ws1.sinaimg.cn/large/a45cbeeagy1fcmnw7ikiwg208p0fen5z" alt="android-ripple"></p>
+</li>
+<li><p>无边界</p>
+<p><img src="https://ws1.sinaimg.cn/large/a45cbeeagy1fcmp6kzl8ng208p0fe1kx" alt="no-bound"></p>
+<p>可以看到无边界的水波纹都延伸到了上方的<code>TextView</code>。</p>
+</li>
+</ul>
+<p>那么对于有边界的水波纹：<code>overflow: hidden</code>，而无边界的水波纹则是<code>overflow: visible</code>。</p>
+<p>综上，用于内容本体的 CSS 应该是：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ripple-effect</span> &#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">overflow</span>: hidden; <span class="comment">/*有边界的水波纹*/</span></div><div class="line">    <span class="attribute">overflow</span>: visible; <span class="comment">/*无边界的水波纹*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="水波纹的实现"><a href="#水波纹的实现" class="headerlink" title="水波纹的实现"></a>水波纹的实现</h3><p>其实水波纹只是一个 View 从小放大的效果而己，即由<code>scale(0)</code>到<code>scale(?)</code>。</p>
+<p>首先，这个 View 是圆形的，所以是<code>border-radius: 100%</code>。然后为了不遮挡下面的内容，水波纹的背景色应有一定的透明度，例如<code>background: rgba(0, 0, 0, 0.25)</code>。</p>
+<p>即：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ripple</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.25);</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0);</div><div class="line">    <span class="attribute">pointer-events</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="水波纹的大小"><a href="#水波纹的大小" class="headerlink" title="水波纹的大小"></a>水波纹的大小</h4><p>可以将水波纹的大小设为内容本体长和宽中的最大值，但这就存在一个问题，如果点击位置不在内容本体的中心，那么扩散之后的水波纹并不能覆盖整个内容本体。最差的情况是，如果点击位置在内容本体里的最远端，那么水波纹至多只能覆盖内容本体的一半。既然如此，只需将水波纹的扩散设为<code>scale(2)</code>。</p>
+<h4 id="水波纹的位置"><a href="#水波纹的位置" class="headerlink" title="水波纹的位置"></a>水波纹的位置</h4><p>上面也说了，水波纹应该是绝对定位的，所以<code>position: absolute</code>。但仅仅这一行，只能将水波纹置于父节点内部的左上角，即水波纹的左上角点与内容本体的左上角点重合。这并不能实现在点击时由鼠标点击的位置触发水波纹，所以要将水波纹的中心移到鼠标点击的位置。</p>
+<p>先来看看几个概念的示意图：</p>
+<p><img src="https://ws1.sinaimg.cn/large/a45cbeeagy1fcn16olmtzj20o20ggjsf" alt=""></p>
+<ul>
+<li><p>红点</p>
+<p>点击位置</p>
+</li>
+<li><p><code>pageX, pageY</code></p>
+<p>点击位置相对于整个网页的坐标。</p>
+</li>
+<li><p><code>left, top</code></p>
+<p>指<code>getBoundingClientRect().left</code>和<code>getBoundingClientRect().top</code>，表示内容本体相对于浏览器窗口的坐标。</p>
+</li>
+<li><p><code>scrollLeft, scrollTop</code></p>
+<p>指<code>document.body.scrollLeft</code>和<code>document.body.scrollTop</code>，表示网页的滚动距离。</p>
+</li>
+</ul>
+<p>显然，通过<code>pageY - top - scrollTop</code>可以得到点击位置相对于内容本体的 Y 坐标，同理，可以通过<code>pageX - left - scrollLeft</code>可以得到点击位置相对于内容本体的 X 点击位置相对于整个网页的坐标。</p>
+<p>知道点击位置相对于内容本体的坐标之后，就可以轻易计算出将水波纹中心移到点击位置需要移动的距离：</p>
+<ul>
+<li><p>Y 方向上需要移动的距离：<code>pageY - top - scrollTop - offsetHeight / 2</code></p>
+</li>
+<li><p>X 方向上需要移动的距离：<code>pageX - left - scrollLeft - offsetWidth / 2</code></p>
+</li>
+</ul>
+<p>其中，<code>offsetHeight</code>和<code>offsetWidth</code>分别指水波纹的高和宽。</p>
+<h4 id="水波纹的扩散"><a href="#水波纹的扩散" class="headerlink" title="水波纹的扩散"></a>水波纹的扩散</h4><p>想要动态修改 CSS，方便的做法是增删类，所以这里写一个 CSS 类<code>show</code>，里面加上动画，包括：</p>
+<ul>
+<li><p>由<code>scale(0)</code>到<code>scale(2)</code></p>
+</li>
+<li><p>由<code>opacity: 1</code>到<code>opacity: 0</code></p>
+</li>
+</ul>
+<p>即：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ripple</span><span class="selector-class">.show</span> &#123;</div><div class="line">    <span class="attribute">animation</span>: ripple <span class="number">0.75s</span> ease-out;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">@<span class="keyword">keyframes</span> ripple &#123;</div><div class="line">    <span class="selector-tag">to</span> &#123;</div><div class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(2);</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当点击事件触发时，先移除<code>show</code>类，再添加回<code>show</code>类，这样就可以达到每次点击都有水波纹扩散的效果。</p>
+<h4 id="具体-JavaScript-代码"><a href="#具体-JavaScript-代码" class="headerlink" title="具体 JavaScript 代码"></a>具体 JavaScript 代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addRippleEffect = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> target = e.target;</div><div class="line">    <span class="keyword">var</span> rect = target.getBoundingClientRect();</div><div class="line">    <span class="keyword">var</span> ripple = target.querySelector(<span class="string">'.ripple'</span>);</div><div class="line">    <span class="keyword">if</span> (!ripple) &#123; <span class="comment">// 首次添加水波纹</span></div><div class="line">        ripple = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</div><div class="line">        ripple.className = <span class="string">'ripple'</span>;</div><div class="line">        ripple.style.height = ripple.style.width = <span class="built_in">Math</span>.max(rect.width, rect.height) + <span class="string">'px'</span>;</div><div class="line">        target.appendChild(ripple); <span class="comment">// 添加水波纹子节点</span></div><div class="line">    &#125;</div><div class="line">    ripple.classList.remove(<span class="string">'show'</span>); <span class="comment">// 移除类 show</span></div><div class="line">    <span class="keyword">var</span> top = e.pageY - rect.top - ripple.offsetHeight / <span class="number">2</span> - <span class="built_in">document</span>.body.scrollTop;</div><div class="line">    <span class="keyword">var</span> left = e.pageX - rect.left - ripple.offsetWidth / <span class="number">2</span> - <span class="built_in">document</span>.body.scrollLeft;</div><div class="line">    ripple.style.top = top + <span class="string">'px'</span>;</div><div class="line">    ripple.style.left = left + <span class="string">'px'</span>;</div><div class="line">    ripple.classList.add(<span class="string">'show'</span>); <span class="comment">// 添加类 show</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在页面结构加载完之后，就可以遍历所有带<code>ripple-effect</code>的节点，逐个将上面的函数添加到点击事件中去。</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>我的博客有这种水波纹的效果，例如：</p>
+<p><img src="https://ws1.sinaimg.cn/large/a45cbeeagy1fcn3200iuxg206v07bdl3" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>初涉前端，感觉上，一些效果的实现比在 Android 上实现要来得简单一些。但我知道，UI 和交互是灵感迸发的结果，在各种炫酷特效前面，很多时候只能默默奉上自己的膝盖，随后百思，而终不得其解。</p>
+
+        
+    </div>
+    
+    
+</div>
+            <div class="prev-next-wrapper">
+    
+        <div class="prev">
+            <a href="/2017/03/17/rxjs-stream/">
+                <div class="arrow"></div>
+                <span>newer</span>
+            </a>
+        </div>
+        <h1 class="prev-next-title"></h1>
+        <div class="next">
+            <a href="/2016/09/20/swipe-refresh-layout/">
+                <div class="arrow"></div>
+                <span>older</span>
+            </a>
+        </div>
+    
+</div>
+
+<script>
+    var prev = document.querySelector('.prev a');
+    var next = document.querySelector('.next a');
+    var title = document.querySelector('.prev-next-title');
+
+    if (title) {
+        prev.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '关于RxJS的数据流';
+            title.classList.add('prev-next-title--slide-right');
+        });
+        prev.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-right');
+        });
+
+        next.addEventListener('mouseover', function(ev) {
+            title.innerHTML = 'SwipeRefreshLayout的圈圈无法显示的问题';
+            title.classList.add('prev-next-title--slide-left');
+        });
+        next.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-left');
+        });
+    }
+</script>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2017/02/18/ripple-effect/';
+            this.page.identifier = '2017/02/18/ripple-effect/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="">Poem</a>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        Toolbar 的使用
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about technology and life">
+<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    
+
+    <header class="header-wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="/">
+                <img class="logo" src="/img/logo.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                
+                    <li>
+                        
+                            <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="https://github.com/codpoe/" target="_blank" title="github">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+
+        </div>
+        <ul class="right">
+            
+                <li>
+                    
+                        <a 
+                            href="/" 
+                            class="normal-menu "
+                            target="_self">
+                            home
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <span class="category">
+                            category <i class="fa fa-angle-down"></i>
+                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                        </span>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/archives/" 
+                            class="normal-menu "
+                            target="_self">
+                            archive
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/about/" 
+                            class="normal-menu "
+                            target="_self">
+                            about
+                        </a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a 
+                            href="/resume/" 
+                            class="normal-menu "
+                            target="_blank">
+                            resume
+                        </a>
+                    
+                </li>
+            
+        </ul>
+        <i class="fa fa-bars menu-bar"></i>
+    </div>
+    <ul class="mobile-menu">
+        
+            
+                <li>
+                    <a 
+                        href="/" 
+                        class=""
+                        target="_self">
+                        home
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a 
+                        href="/archives/" 
+                        class=""
+                        target="_self">
+                        archive
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/about/" 
+                        class=""
+                        target="_self">
+                        about
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a 
+                        href="/resume/" 
+                        class=""
+                        target="_blank">
+                        resume
+                    </a>
+                </li>
+            
+        
+    </ul>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <div class="title-wrapper">
+        
+            <span class="title">
+                Toolbar 的使用
+            </span>
+        
+        <ul class="description">
+            <li>
+                <i class="fa fa-calendar"></i>
+                May 6, 2016
+            </li>
+            
+                |
+                <li>
+                    <i class="fa fa-tag"></i>
+                    
+                        <a href="/categories/Android">
+                            
+                                Android
+                            
+                        </a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+    
+    <div class="markdown-body">
+        
+            <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">    <span class="attr">app:title</span>=<span class="string">"Title"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="Java-代码"><a href="#Java-代码" class="headerlink" title="Java 代码"></a>Java 代码</h3><p>与普通控件差别不大，方法很多，这里不再赘述，具体可看 Android 官方文档。</p>
+<h2 id="Toolbar-上的-menu"><a href="#Toolbar-上的-menu" class="headerlink" title="Toolbar 上的 menu"></a>Toolbar 上的 menu</h2><h3 id="先在-menu-文件夹中新建一个-tool-bar-menu-xml"><a href="#先在-menu-文件夹中新建一个-tool-bar-menu-xml" class="headerlink" title="先在 menu 文件夹中新建一个 tool_bar_menu.xml"></a>先在 menu 文件夹中新建一个 tool_bar_menu.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/andro</span></span></div><div class="line"><span class="tag"><span class="string">    xmlns:app="</span><span class="attr">http:</span>//<span class="attr">schemas.android.com</span>/<span class="attr">apk</span>/<span class="attr">res-auto</span>"&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/search_btn"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_search_white_24dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:title</span>=<span class="string">"search"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:showAsAction</span>=<span class="string">"always"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/refresh_btn"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_refresh_white_24dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:title</span>=<span class="string">"refresh"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:showAsAction</span>=<span class="string">"always"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/action_item_1"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:title</span>=<span class="string">"item 1"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:showAsAction</span>=<span class="string">"never"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/action_item_2"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:title</span>=<span class="string">"item 2"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:showAsAction</span>=<span class="string">"never"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>可以看到，我在这里定义了四个 item，分别对应着搜索，刷新和两个隐藏的子菜单。为何说是隐藏的子菜单？后两个 item 和 前两个 item 有什么区别吗?显然，区别在于每个 item 最后一句的代码<code>app:showAsAction=&quot;&quot;</code>，可选的值有但不限于：</p>
+<ul>
+<li>always (显示在 Toolbar 上)</li>
+<li>never (二级菜单，隐藏在最右边的三点图标内)</li>
+<li>ifRoom (Toolbar 上有足够的空间才显示出来)</li>
+</ul>
+<p>注意：<code>app:showAsAction=&quot;&quot;</code> 的命名空间要是 app，若改其命名空间为 android，会报错</p>
+<h3 id="再在-Java-代码中使用菜单的-xml"><a href="#再在-Java-代码中使用菜单的-xml" class="headerlink" title="再在 Java 代码中使用菜单的 xml"></a>再在 Java 代码中使用菜单的 xml</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">toolbar.inflateMenu(R.menu.tool_bar_menu);</div></pre></td></tr></table></figure>
+<h3 id="给-menu-设置监听"><a href="#给-menu-设置监听" class="headerlink" title="给 menu 设置监听"></a>给 menu 设置监听</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">toolbar.setOnMenuItemClickListener(<span class="keyword">new</span> Toolbar.OnMenuItemClickListener() &#123; <span class="comment">//toolbar上菜单的监听事件</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">            <span class="keyword">case</span> R.id.search_btn:</div><div class="line">                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"click search button"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.refresh_btn:</div><div class="line">                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"click refresh button"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.action_item_1:</div><div class="line">                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"click item1"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> R.id.action_item_2:</div><div class="line">                Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"click item2"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>如此一来，就不必在 activity 中另建菜单。</p>
+<p>注意：如果通过 Toolbar 这样的方法创建 menu 之后，再在 Java 代码中将 Toolbar 设为 actionBar 的话，会让这个 menu 失效，即看不到 menu 啦，悲伤 ╮(╯_╰)╭，这实在是个坑，当初找了很久才找出这个 bug…所以大家要是选择通过 Toolbar 设置菜单，就不要再将其设为 acitonBar 了。</p>
+<h2 id="与-AppBarLayout-联合"><a href="#与-AppBarLayout-联合" class="headerlink" title="与 AppBarLayout 联合"></a>与 AppBarLayout 联合</h2><p>借助 CoordinatorLayout 后，Toolbar 与 AppBarLayout 的联合使用，可比较简单地实现一些酷炫的交互。当然，要想使用 CoordinatorLayout，要先引入 Desinn 库的依赖：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:design:23.1.1'</span></div></pre></td></tr></table></figure></p>
+<p>关于 CoordinatorLayout，可以看这篇文章：<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0717/3196.html" target="_blank" rel="external">CoordinatorLayout与滚动的处理</a>，我这里就当作补充吧，从实践角度讲一下细节。</p>
+<h3 id="滑动隐藏-Toolbar"><a href="#滑动隐藏-Toolbar" class="headerlink" title="滑动隐藏 Toolbar"></a>滑动隐藏 Toolbar</h3><p>亮图：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/toolbar/sceenshot_3.gif-blogsize" alt="滑动隐藏 Toolbar"><br>上代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</span></div><div class="line"> </div><div class="line">        <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/tool_bar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|enterAlways"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:title</span>=<span class="string">"Title"</span> /&gt;</span></div><div class="line"> </div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.TabLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/tab_layout"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:tabTextColor</span>=<span class="string">"#83c7fd"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:tabSelectedTextColor</span>=<span class="string">"#ffffff"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:tabIndicatorColor</span>=<span class="string">"#ffffff"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:tabIndicatorHeight</span>=<span class="string">"3dp"</span>/&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;/<span class="name">android.support.design.widget.AppBarLayout</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/pager"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span>/&gt;</span></div><div class="line"> </div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>结构上，CoordinatorLayout 里包含 AppBarLayout 和 ViewPager，其中 AppBarLayout 包含着 Toolbar 和 TabLayout。Toolbar 里的 <code>app:layout_scrollFlags=&quot;scroll|enterAlways&quot;</code>，和 ViewPager 里的 <code>app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;</code>，这两句是实现联动效果的关键！<br>当然，其中的 <code>app:layout_scrollFlags=&quot;&quot;</code> 有好几个值可选：</p>
+<ul>
+<li><code>scroll</code></li>
+<li><code>exitUntilCollapsed</code></li>
+<li><code>enterAlways</code></li>
+<li><code>enterAlwaysCollapsed</code></li>
+<li><code>exitUntilCollapsed</code></li>
+</ul>
+<p>在这里，要想实现 Toolbar 的隐藏，<br>Toolbar 的 <code>app:layout_scrollFlags=&quot;&quot;</code> 应选择 <code>scroll|enterAlways</code>，而 TabLayout 因不需滚动出屏幕，则不用设置该属性。<br>关于其他几个的区别，读者可自行试试。</p>
+<p>注意：ViewPager 里面的 Fragment，要么是 RecycleView，要么父布局是 NestedScrollView，总而言之，是能与 CoordinatorLayout 联动的部件。</p>
+<p>关于 TabLayout 和 ViewPager ，有时间的话可以再写篇文章了，给自己挖坑 orz，不过还是挺好的，多写写博客嘛 ^_^</p>
+<h3 id="实现-Toolbar-的折叠效果"><a href="#实现-Toolbar-的折叠效果" class="headerlink" title="实现 Toolbar 的折叠效果"></a>实现 Toolbar 的折叠效果</h3><p>要想实现折叠效果，就要在 CoordinatorLayout，AppBarLayout 和 Toolbar 的基础上，再加上 CollapsingToolbarLayout 了。顾名思义，CollapsingToolbarLayout 就是实现 Toolbar 折叠的关键所在！</p>
+<p>废话少说，先上代码：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.design.widget.CoordinatorLayout</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.AppBarLayout</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/app_bar"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:theme</span>=<span class="string">"@style/AppTheme.AppBarOverlay"</span>&gt;</span></div><div class="line"> </div><div class="line">        <span class="tag">&lt;<span class="name">android.support.design.widget.CollapsingToolbarLayout</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/coolapsing_toolbar"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:contentScrim</span>=<span class="string">"@color/colorPrimary"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:layout_scrollFlags</span>=<span class="string">"scroll|exitUntilCollapsed"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:expandedTitleMarginStart</span>=<span class="string">"16dp"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:expandedTitleMarginBottom</span>=<span class="string">"10dp"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:titleEnabled</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">            <span class="attr">app:title</span>=<span class="string">"Hello"</span>&gt;</span></div><div class="line"> </div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:scaleType</span>=<span class="string">"centerCrop"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"parallax"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:src</span>=<span class="string">"@drawable/croatian_coast"</span>/&gt;</span></div><div class="line"> </div><div class="line">            <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/rv_tool_bar"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:popupTheme</span>=<span class="string">"@style/AppTheme.PopupOverlay"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:layout_collapseMode</span>=<span class="string">"pin"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:navigationIcon</span>=<span class="string">"@drawable/ic_arrow_back_white_24dp"</span></span></div><div class="line"><span class="tag">                <span class="attr">app:title</span>=<span class="string">"Hi"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></div><div class="line"> </div><div class="line">        <span class="tag">&lt;/<span class="name">android.support.design.widget.CollapsingToolbarLayout</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;/<span class="name">android.support.design.widget.AppBarLayout</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/rv"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:layout_behavior</span>=<span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">android.support.v7.widget.RecyclerView</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">android.support.design.widget.FloatingActionButton</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:layout_anchor</span>=<span class="string">"@id/app_bar"</span></span></div><div class="line"><span class="tag">        <span class="attr">app:layout_anchorGravity</span>=<span class="string">"bottom|right"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_marginRight</span>=<span class="string">"16dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:src</span>=<span class="string">"@drawable/ic_search_white_24dp"</span>/&gt;</span></div><div class="line"> </div><div class="line"><span class="tag">&lt;/<span class="name">android.support.design.widget.CoordinatorLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>可以看到，主父布局仍然是 CoordinatorLayout。只需要把 Toolbar 放进 CollapsingToolbarLayout 里面，然后再一起放进 AppBarLayout 里就行。难道这就可以实现折叠效果吗？不不不，图样图森破！</p>
+<p>这里面的关键代码是 ImageView 里的：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app:layout_collapseMode="parallax"</div></pre></td></tr></table></figure></p>
+<p>和 Toolbar 里的：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app:layout_collapseMode="pin"</div></pre></td></tr></table></figure></p>
+<p>parallax，是指视差滚动<br>pin，指固定不动</p>
+<p>如此一来就可实现折叠效果，接下来再简单说下 CollapsingToolbarLayout 里的一些重要属性：</p>
+<ul>
+<li><code>app:contentScrim=&quot;&quot;</code><br>srim，Google 翻译是麻布。通过实践，我想，这里的意思应该是 Toolbar 折叠后的背景，所以可填的值为颜色，或者图片背景</li>
+<li><code>app:layout_scrollFlags=&quot;&quot;</code><br>这个属性在上面的<code>3-1 滑动隐藏 Toolbar</code>有介绍。在这里，如果没有设置这个属性，则不会产生折叠效果，布局会固定在原地。要想实现图片上折叠的效果，应选择<code>scroll|exitUntilCollapsed</code>，其他几个选项的区别就不一一列出了。</li>
+<li><code>app:expandedTitleMargin</code><br>这个是一系列的属性，包括<code>MarginStart</code>，<code>MarginBottom</code>等等，顾名思义，这些属性是调整展开后 title 的位置的</li>
+<li><code>app:title=&quot;&quot;</code><br>显然，这个属性是设置 Toolbar 的 title 的，可能你会问：为什么不在 Toolbar 里面设置 title 呢？有什么区别呢？我在这里做一个对比吧。</li>
+</ul>
+<p>CollapsingToolbarLayout 里：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app:titleEnabled="true"</div><div class="line">app:title="Hello"</div></pre></td></tr></table></figure></p>
+<p>Toolbar 里：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app:title="Hi"</div></pre></td></tr></table></figure></p>
+<p>来看看效果：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/toolbar/sceenshot_1.gif-blogsize" alt="Toolbar 1"><br>然后我们把 CollapsingToolbarLayout 改一下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app:titleEnabled="false"</div></pre></td></tr></table></figure></p>
+<p>再看下效果：<br><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/toolbar/2.gif-blogsize" alt="Toobar 2"></p>
+<p>对比之下，就很清楚了。同时在 CollapsingToolbarLayout 和 Toolbar 都设置了 title 的话，前者的 title 会覆盖后者的，即只显示前者的 title。</p>
+<p>感谢阅读！</p>
+
+        
+    </div>
+    
+    
+</div>
+            <div class="prev-next-wrapper">
+    
+        <div class="prev">
+            <a href="/2016/08/02/hexo/">
+                <div class="arrow"></div>
+                <span>newer</span>
+            </a>
+        </div>
+        <h1 class="prev-next-title"></h1>
+        <div class="next">
+            <a href="">
+                <div class="arrow"></div>
+                <span>older</span>
+            </a>
+        </div>
+    
+</div>
+
+<script>
+    var prev = document.querySelector('.prev a');
+    var next = document.querySelector('.next a');
+    var title = document.querySelector('.prev-next-title');
+
+    if (title) {
+        prev.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '终于又双叒叕搭建好我的博客啦';
+            title.classList.add('prev-next-title--slide-right');
+        });
+        prev.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-right');
+        });
+
+        next.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '';
+            title.classList.add('prev-next-title--slide-left');
+        });
+        next.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-left');
+        });
+    }
+</script>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2016/05/06/use-of-toolbar/';
+            this.page.identifier = '2016/05/06/use-of-toolbar/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="">Poem</a>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>
