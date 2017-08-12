@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 <title>
     
-        Codpoe&#39;s blog
+        CSS实现长投影
     
 </title>
 <meta name="author" content="Codpoe">
@@ -13,44 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-    <link rel="stylesheet" href="/css/index.bundle.css">
+    <link rel="stylesheet" href="/css/post.bundle.css">
 </head>
 <body>
-    
-        <div class="first-screen">
-    <div class="center">
-        <h1 class="name">CODPOE</h1>
-        <h2 class="description">Front-End Developer / Life is a Poem</h2>
-        <div class="links">
-            
-                
-                    <a href="mailto:codpoe.me@gmail.com">
-                        Gmail
-                    </a>
-                
-            
-                
-                    <a href="http://weibo.com/u/2757541610/" target="_blank">
-                        Weibo
-                    </a>
-                
-            
-                
-                    <a href="https://github.com/codpoe/" target="_blank">
-                        GitHub
-                    </a>
-                
-            
-        </div>
-        <button class="entry-btn">
-            BLOG
-        </button>
-    </div>
-
-    <canvas class="triangle-canvas"></canvas>
-</div>
-
-
     
 
     <header class="header-wrapper">
@@ -86,7 +51,7 @@
                     
                         <a 
                             href="/" 
-                            class="normal-menu menu--active"
+                            class="normal-menu "
                             target="_self">
                             home
                         </a>
@@ -144,7 +109,7 @@
                 <li>
                     <a 
                         href="/" 
-                        class="menu--active"
+                        class=""
                         target="_self">
                         home
                     </a>
@@ -193,13 +158,12 @@
 
     <div class="wrapper">
         <div class="container">
-            
-                <div class="post">
+            <div class="post">
     <div class="title-wrapper">
         
-            <a class="title" href="/2017/08/12/long-shadow/">
+            <span class="title">
                 CSS实现长投影
-            </a>
+            </span>
         
         <ul class="description">
             <li>
@@ -259,269 +223,44 @@
     </div>
     
     
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2017/08/12/long-shadow/">
-                <button class="more-btn">
-                    <span>MORE</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
-    
 </div>
-            
-                <div class="post">
-    <div class="title-wrapper">
-        
-            <a class="title" href="/2017/06/06/scope-chain/">
-                JS的作用域链
-            </a>
-        
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Jun 6, 2017
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/前端">
-                            
-                                前端
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-    
-    <div class="markdown-body">
-        
-            <h2 id="知乎上的问题"><a href="#知乎上的问题" class="headerlink" title="知乎上的问题"></a>知乎上的问题</h2><p>最近在知乎上看到个有关作用域的问题，一时找不到，类似如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y = function(</span>) </span>&#123; x = <span class="number">2</span>; &#125;) &#123;</div><div class="line">   <span class="keyword">var</span> x = <span class="number">3</span>;</div><div class="line">   y();</div><div class="line">   <span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line">foo(); <span class="comment">// 3</span></div><div class="line">x <span class="comment">// 1</span></div></pre></td></tr></table></figure>
-        
-    </div>
-    
-    
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2017/06/06/scope-chain/">
-                <button class="more-btn">
-                    <span>MORE</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
-    
-</div>
-            
-                <div class="post">
-    <div class="title-wrapper">
-        
-            <a class="title" href="/2017/03/17/rxjs-stream/">
-                关于RxJS的数据流
-            </a>
-        
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Mar 17, 2017
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/前端">
-                            
-                                前端
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-    
-    <div class="markdown-body">
-        
-            <h2 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h2><p>在写 Android 的时候，RxJava 和 RxAndroid 几乎是每个项目的标配，同时，RxJava 也是 Rx 系列里 GitHub star 数最多的，可见 Rx 在 Java 领域的普及度很高，而 RxJava 的各种文章也真心多。而在前端领域，RxJS 就相对没那么流行了。</p>
-<p>至于原因，一方面前端的各种框架 Vue 等等也可以做到类似的功能，有时候并没有必要再引入 RxJS，另一方面是 RxJS 上手有点难（当初入门 RxJava 的时候，扔物线大大的入门文章我反复看了好几遍。。。），还有就是我觉得吧，是 Java 本身的异步有点难用。。。</p>
-<p>但毋庸置疑，RxJS 的数据流操作能力是相当强大且富有想象力的。<br>
-        
-    </div>
-    
-    
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2017/03/17/rxjs-stream/">
-                <button class="more-btn">
-                    <span>MORE</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
-    
-</div>
-            
-                <div class="post">
-    <div class="title-wrapper">
-        
-            <a class="title" href="/2017/02/18/ripple-effect/">
-                水波纹效果的实现
-            </a>
-        
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Feb 18, 2017
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/前端">
-                            
-                                前端
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-    
-    <div class="markdown-body">
-        
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在学 Android 开发的时候，一直很喜欢 Material Design，经常翻看官方的指南。其中有个很出众的 UI 效果 – 水波纹。Android 开发者对这个效果应当是不陌生的，可以说这是 Material Design 的一大特性了吧。</p>
-<p>个人觉得这个设计的动效还是很赞的，于是就想在前端简陋地实现一下。<br>
-        
-    </div>
-    
-    
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2017/02/18/ripple-effect/">
-                <button class="more-btn">
-                    <span>MORE</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
-    
-</div>
-            
-                <div class="post">
-    <div class="title-wrapper">
-        
-            <a class="title" href="/2016/09/20/swipe-refresh-layout/">
-                SwipeRefreshLayout的圈圈无法显示的问题
-            </a>
-        
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Sep 20, 2016
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/Android">
-                            
-                                Android
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-    
-    <div class="markdown-body">
-        
-            <blockquote>
-<p><code>onResume()</code>这个函数在 Activity 变得可见时被调用，执行完<code>onResume()</code>之后，Activity 就会请求 AMS 渲染它所管理的视图。 </p>
-</blockquote>
-<p>这是《从小工到专家》书上的说法，也没错。</p>
-<p>最近在使用<code>SwipeRefreshLayout</code>时，想在 Activity 一可见时就调用<code>setRefreshing(true)</code>，达到自动刷新的效果，以期能有更好的用户体验，这也是大多 App 所采取的做法。于是乎，我就在<code>onResume()</code>中调用了<code>mRefreshLay.setRefreshing(true)</code>，按道理应该是没什么问题的，我就开心地边等编译边玩手机。<br>
-        
-    </div>
-    
-    
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2016/09/20/swipe-refresh-layout/">
-                <button class="more-btn">
-                    <span>MORE</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
-    
-</div>
-            
-                <div class="post">
-    <div class="title-wrapper">
-        
-            <a class="title" href="/2016/08/22/smiling-face-view/">
-                仿支付宝的刷新View--SmilingFaceView
-            </a>
-        
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Aug 22, 2016
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/Android">
-                            
-                                Android
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-    
-    <div class="markdown-body">
-        
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近我在学习自定义 View，碰巧遇上支付宝 App 大更新，UI 改了很多，其中的「生活」Tab 有一个下拉刷新的 View，如图：</p>
-<p><img src="http://image.codpoe.me/alipay.gif-blogsize" alt="Alipay"></p>
-<p>支付宝这个效果乍看之下，觉得不算复杂，按我自己目前的渣渣能力应该还是可以实现的吧，之后就着手开搞了。由于对自定义 View 还不够熟练，模仿实现的过程还是有点头疼的，幸好实现的效果还不错啦。<br>
-        
-    </div>
-    
-    
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2016/08/22/smiling-face-view/">
-                <button class="more-btn">
-                    <span>MORE</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
-    
-</div>
-            
-
             <div class="pagination">
-                <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
-            </div>
-        </div>
+    
+        
+        
+            <a class="next" href="/2017/06/06/scope-chain/">older</a>
+        
+    
+</div>
 
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2017/08/12/long-shadow/';
+            this.page.identifier = '2017/08/12/long-shadow/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
         <footer class="footer">
     <div class="copyright">
         <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
@@ -531,10 +270,7 @@
     </div>
 </footer>
     </div>
-
     
-
-    <script src="/js/index.bundle.js"></script>
+    <script src="/js/post.bundle.js"></script>
 </body>
 </html>
-
