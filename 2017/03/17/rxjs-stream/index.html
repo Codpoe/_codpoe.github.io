@@ -17,7 +17,6 @@
 </head>
 <body>
     <header class="header-wrapper 
-    
     ">
 
     <div class="header">
@@ -50,7 +49,7 @@
                 <li>
                     
                         <span class="category">
-                            分类 <i class="fa fa-angle-down"></i>
+                            分类&nbsp;<i class="fa fa-angle-down"></i>
                             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
                         </span>
                     
@@ -256,7 +255,7 @@
 <p>形象地，实际的数据流为：</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">down$</span>:       down-------------down--------</div><div class="line"><span class="symbol">up$</span>:         -----------up----------------</div><div class="line"><span class="symbol">merge</span>:       -----------up----down--------</div><div class="line"><span class="keyword">switchMapTo: </span><span class="keyword">move0-move1------move2-move3-</span></div><div class="line"><span class="keyword">bufferCount: </span>[<span class="keyword">move0, </span><span class="keyword">move1]-[move1, </span><span class="keyword">move2]-[move2, </span><span class="keyword">move3]</span></div><div class="line"><span class="keyword"> </span></div><div class="line"><span class="symbol">result</span>:      [<span class="keyword">move0, </span><span class="keyword">move1]-[move1, </span><span class="keyword">move2]-[move2, </span><span class="keyword">move3]</span></div></pre></td></tr></table></figure>
 <p>然而按照预期想法，<code>move0, move1</code>应是同一条线上的，<code>move2, move3</code>是另一条线上的，所以预期的数据流应是这样的：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">result</span>: <span class="selector-attr">[move0, move1]</span><span class="selector-tag">-</span><span class="selector-attr">[move2, move3]</span></div></pre></td></tr></table></figure>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result: <span class="string">[move0, move1]</span>-<span class="string">[move2, move3]</span></div></pre></td></tr></table></figure>
 <p>这显然和实际情况不符，这就是问题所在：<code>bufferCount</code>错误地将两个原本不应该在一起的坐标合并了。所以要解决这个问题，就要改变<code>bufferCount</code>的位置。</p>
 <p>具体地说，就是不能在主数据流里用<code>bufferCount</code>，而应该在每次都是新发射出的<code>mousemove</code>数据流里用，先使坐标们正确地合并在一起，然后才发射到主数据流上。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">down$</span>:       down-------------down--------</div><div class="line"><span class="symbol">up$</span>:         -----------up----------------</div><div class="line"><span class="symbol">merge</span>:       -----------up----down--------</div><div class="line"><span class="keyword">switchMapTo: </span><span class="keyword">move0-move1------move2-move3-</span></div><div class="line"><span class="keyword">- </span><span class="keyword">bufferCount:</span></div><div class="line"><span class="keyword"> </span>            [<span class="keyword">move0, </span><span class="keyword">move1]-[move2, </span><span class="keyword">move3]</span></div><div class="line"><span class="keyword"> </span></div><div class="line"><span class="symbol">result</span>:      [<span class="keyword">move0, </span><span class="keyword">move1]-[move2, </span><span class="keyword">move3]</span></div></pre></td></tr></table></figure>
