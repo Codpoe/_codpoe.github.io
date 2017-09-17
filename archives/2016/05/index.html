@@ -8,8 +8,9 @@
     
 </title>
 <meta name="author" content="Codpoe">
-<meta name="description" content="An elegant blog about technology and life">
-<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="description" content="An elegant blog about tech and life">
+<meta name="keywords" content="Blog, Tech, Front-End">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
@@ -23,176 +24,139 @@
 </head>
 <body>
     <header class="header-wrapper 
+     
     ">
 
     <div class="header">
-        <div class="left">
+        <div class="header__normal ">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        Codpoe
+                    </h1>
+                </a>
+            </div>
+            <ul class="right menu-list">
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/" 
+                                class="normal-menu "
+                                target="_self">
+                                首页
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <span class="category">
+                                分类&nbsp;<i class="fa fa-angle-down"></i>
+                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                            </span>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/archives" 
+                                class="normal-menu menu--active"
+                                target="_self">
+                                归档
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/about" 
+                                class="normal-menu "
+                                target="_self">
+                                关于
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/resume" 
+                                class="normal-menu "
+                                target="_blank">
+                                简历
+                            </a>
+                        
+                    </li>
+                
+            </ul>
             <div class="menu-bar">
                 <div class="menu-bar__middle"></div>
             </div>
-            <a href="/" class="header__info">
-                <img src="/img/logo.jpg" alt="logo">
-                <span>Codpoe</span>
-                <!--<span>Front-End Developer</span>-->
-            </a>
-
         </div>
-        <ul class="right">
-            
-            
-                <li>
-                    
-                        <a
-                            href="/" 
-                            class="normal-menu "
-                            target="_self">
-                            首页
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <span class="category">
-                            分类&nbsp;<i class="fa fa-angle-down"></i>
-                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
-                        </span>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/archives" 
-                            class="normal-menu menu--active"
-                            target="_self">
-                            归档
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/about" 
-                            class="normal-menu "
-                            target="_self">
-                            关于
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/resume" 
-                            class="normal-menu "
-                            target="_blank">
-                            简历
-                        </a>
-                    
-                </li>
-            
-        </ul>
+        
     </div>
 
-    <div class="drawer">
-        <div
-            class="drawer__header"
-            style="background-image: url(https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg)">
-            
-            <div class="drawer__info">
-                <img src="/img/logo.jpg" alt="logo" class="drawer__logo">
-                <h1 class="drawer__name">Codpoe</h1>
-                <h2 class="drawer__description">Front-End Developer</h2>
-            </div>
-        </div>
+    <div class="header__drawer">
         <ul class="drawer__menu-list">
         
         
-            
-                <li>
-                    <a 
-                        href="/" 
-                        class="drawer__menu "
-                        target="_self">
-                        首页
-                    </a>
-                </li>
-            
         
-        
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/archives" 
-                        class="drawer__menu drawer__menu--active"
-                        target="_self">
-                        归档
-                    </a>
-                </li>
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/about" 
-                        class="drawer__menu "
-                        target="_self">
-                        关于
-                    </a>
-                </li>
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/resume" 
-                        class="drawer__menu "
-                        target="_blank">
-                        简历
-                    </a>
-                </li>
-            
-        
-        </ul>
-        <ul class="drawer__links">
-        
-            
             <li>
-            
-                <a href="mailto:codpoe.me@gmail.com" title="mail">
-                    <i class="fa fa-envelope" style="color: #2D9EDE"></i>
+                <a 
+                    href="/" 
+                    class="drawer__menu "
+                    target="_self">
+                    首页
                 </a>
-            
             </li>
         
-            
+        
+        
+        
+        
+        
+        
             <li>
-            
-                <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
-                    <i class="fa fa-weibo" style="color: #E6162D"></i>
+                <a 
+                    href="/archives" 
+                    class="drawer__menu drawer__menu--active"
+                    target="_self">
+                    归档
                 </a>
-            
             </li>
         
-            
+        
+        
+        
             <li>
-            
-                <a href="https://github.com/codpoe/" target="_blank" title="github">
-                    <i class="fa fa-github" style="color: #24292E"></i>
+                <a 
+                    href="/about" 
+                    class="drawer__menu "
+                    target="_self">
+                    关于
                 </a>
-            
             </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/resume" 
+                    class="drawer__menu "
+                    target="_blank">
+                    简历
+                </a>
+            </li>
+        
         
         </ul>
     </div>
@@ -201,14 +165,64 @@
 </header>
 
 
+    <div>
+    <div class="header-info">
+        <h2 class="header__desc">
+            Always believe that something wonderful is about to happen
+        </h2>
+        <ul class="header__links">
+        
+            
+            
+                <span class="header__link"
+                    onmouseover="this.style.backgroundColor='#1FB922'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'">
+
+                    <i class="fa fa-wechat"></i>
+                    <div class="header__link-extend">
+                        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg" alt="Wechat">
+                    </div>
+                </span>
+            
+        
+            
+            
+                <a class="header__link"
+                    onmouseover="this.style.backgroundColor='#E6162D'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'"
+                    href="http://weibo.com/u/2757541610/"
+                    target="_blank">
+
+                    <i class="fa fa-weibo"></i>
+                </a>
+            
+        
+            
+            
+                <a class="header__link"
+                    onmouseover="this.style.backgroundColor='#24292E'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'"
+                    href="https://github.com/codpoe/"
+                    target="_blank">
+
+                    <i class="fa fa-github"></i>
+                </a>
+            
+        
+        </ul>
+        <!--<img src="/img/logo.jpg" alt="logo">-->
+    </div>
+</div>
+
+
     <div class="wrapper">
         <div class="container">
             
             
-                <h1 class="year-wrapper">
-                    <span class="year">2017</span>
-                </h1>
-                <h2 class="amount">- 4 -</h2>
+                <header class="year-wrapper">
+                    <h1 class="year">2017</h1>
+                    <h2 class="amount">- 4 -</h2>
+                </header>
                 <ul class="archive-posts">
                     
                         <li class="archive-post-wrapper">
@@ -249,10 +263,10 @@
                     
                 </ul>
             
-                <h1 class="year-wrapper">
-                    <span class="year">2016</span>
-                </h1>
-                <h2 class="amount">- 5 -</h2>
+                <header class="year-wrapper">
+                    <h1 class="year">2016</h1>
+                    <h2 class="amount">- 5 -</h2>
+                </header>
                 <ul class="archive-posts">
                     
                         <li class="archive-post-wrapper">

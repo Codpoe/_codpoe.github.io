@@ -8,8 +8,9 @@
     
 </title>
 <meta name="author" content="Codpoe">
-<meta name="description" content="An elegant blog about technology and life">
-<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="description" content="An elegant blog about tech and life">
+<meta name="keywords" content="Blog, Tech, Front-End">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
@@ -19,176 +20,139 @@
     
 
     <header class="header-wrapper 
-    header-wrapper--light">
+     
+    ">
 
     <div class="header">
-        <div class="left">
+        <div class="header__normal ">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        Codpoe
+                    </h1>
+                </a>
+            </div>
+            <ul class="right menu-list">
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/" 
+                                class="normal-menu menu--active"
+                                target="_self">
+                                首页
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <span class="category">
+                                分类&nbsp;<i class="fa fa-angle-down"></i>
+                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                            </span>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/archives" 
+                                class="normal-menu "
+                                target="_self">
+                                归档
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/about" 
+                                class="normal-menu "
+                                target="_self">
+                                关于
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/resume" 
+                                class="normal-menu "
+                                target="_blank">
+                                简历
+                            </a>
+                        
+                    </li>
+                
+            </ul>
             <div class="menu-bar">
                 <div class="menu-bar__middle"></div>
             </div>
-            <a href="/" class="header__info">
-                <img src="/img/logo.jpg" alt="logo">
-                <span>Codpoe</span>
-                <!--<span>Front-End Developer</span>-->
-            </a>
-
         </div>
-        <ul class="right">
-            
-            
-                <li>
-                    
-                        <a
-                            href="/" 
-                            class="normal-menu menu--active"
-                            target="_self">
-                            首页
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <span class="category">
-                            分类&nbsp;<i class="fa fa-angle-down"></i>
-                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
-                        </span>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/archives" 
-                            class="normal-menu "
-                            target="_self">
-                            归档
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/about" 
-                            class="normal-menu "
-                            target="_self">
-                            关于
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/resume" 
-                            class="normal-menu "
-                            target="_blank">
-                            简历
-                        </a>
-                    
-                </li>
-            
-        </ul>
+        
     </div>
 
-    <div class="drawer">
-        <div
-            class="drawer__header"
-            style="background-image: url(https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg)">
-            
-            <div class="drawer__info">
-                <img src="/img/logo.jpg" alt="logo" class="drawer__logo">
-                <h1 class="drawer__name">Codpoe</h1>
-                <h2 class="drawer__description">Front-End Developer</h2>
-            </div>
-        </div>
+    <div class="header__drawer">
         <ul class="drawer__menu-list">
         
         
-            
-                <li>
-                    <a 
-                        href="/" 
-                        class="drawer__menu drawer__menu--active"
-                        target="_self">
-                        首页
-                    </a>
-                </li>
-            
         
-        
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/archives" 
-                        class="drawer__menu "
-                        target="_self">
-                        归档
-                    </a>
-                </li>
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/about" 
-                        class="drawer__menu "
-                        target="_self">
-                        关于
-                    </a>
-                </li>
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/resume" 
-                        class="drawer__menu "
-                        target="_blank">
-                        简历
-                    </a>
-                </li>
-            
-        
-        </ul>
-        <ul class="drawer__links">
-        
-            
             <li>
-            
-                <a href="mailto:codpoe.me@gmail.com" title="mail">
-                    <i class="fa fa-envelope" style="color: #2D9EDE"></i>
+                <a 
+                    href="/" 
+                    class="drawer__menu drawer__menu--active"
+                    target="_self">
+                    首页
                 </a>
-            
             </li>
         
-            
+        
+        
+        
+        
+        
+        
             <li>
-            
-                <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
-                    <i class="fa fa-weibo" style="color: #E6162D"></i>
+                <a 
+                    href="/archives" 
+                    class="drawer__menu "
+                    target="_self">
+                    归档
                 </a>
-            
             </li>
         
-            
+        
+        
+        
             <li>
-            
-                <a href="https://github.com/codpoe/" target="_blank" title="github">
-                    <i class="fa fa-github" style="color: #24292E"></i>
+                <a 
+                    href="/about" 
+                    class="drawer__menu "
+                    target="_self">
+                    关于
                 </a>
-            
             </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/resume" 
+                    class="drawer__menu "
+                    target="_blank">
+                    简历
+                </a>
+            </li>
+        
         
         </ul>
     </div>
@@ -199,152 +163,200 @@
 
 
     <div class="wrapper">
+        <div>
+    <div class="header-info">
+        <h2 class="header__desc">
+            Always believe that something wonderful is about to happen
+        </h2>
+        <ul class="header__links">
+        
+            
+            
+                <span class="header__link"
+                    onmouseover="this.style.backgroundColor='#1FB922'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'">
+
+                    <i class="fa fa-wechat"></i>
+                    <div class="header__link-extend">
+                        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg" alt="Wechat">
+                    </div>
+                </span>
+            
+        
+            
+            
+                <a class="header__link"
+                    onmouseover="this.style.backgroundColor='#E6162D'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'"
+                    href="http://weibo.com/u/2757541610/"
+                    target="_blank">
+
+                    <i class="fa fa-weibo"></i>
+                </a>
+            
+        
+            
+            
+                <a class="header__link"
+                    onmouseover="this.style.backgroundColor='#24292E'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'"
+                    href="https://github.com/codpoe/"
+                    target="_blank">
+
+                    <i class="fa fa-github"></i>
+                </a>
+            
+        
+        </ul>
+        <!--<img src="/img/logo.jpg" alt="logo">-->
+    </div>
+</div>
+
+
+
         <div class="container">
             
                 <div class="post">
-    <div class="title-wrapper">
+    <header class="title-wrapper">
         
-            <a class="title" href="/2016/08/08/translucent-statusbar/">
-                Translucent StatusBar 的一点实践总结
-            </a>
+            <h1>
+                <a class="title" href="/2016/08/08/translucent-statusbar/">
+                    Translucent StatusBar 的一点实践总结
+                </a>
+            </h1>
         
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Aug 8, 2016
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/Android">
-                            
-                                Android
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
+        
+    </header>
     
-    <div class="markdown-body">
+    <section class="markdown-body">
         
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>以下所说，基于 <code>minSdkVersion 21</code>。</p>
 </blockquote>
 <p>Android 4.4 之前，所有 App 的顶部都是黑漆漆的一条状态栏，跟多彩的 App 内容显得比较不搭，以至于很多人因此说 Android 的 App 丑，比不上 iOS 的美。这也似乎是事实。但从 4.4 开始，Android 引入了透明状态栏的概念，于是乎各路开发纷纷上了透明状态栏的车，实现方式「百花齐放，百家争鸣」，得到的效果也不尽相同。<br>
         
-    </div>
+    </section>
     
     
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2016/08/08/translucent-statusbar/">
-                <button class="more-btn">
-                    <span>阅读全文</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
+    <footer class="footer-wrapper">
+        <ul class="description">
+            <li>
+                Aug 8, 2016
+            </li>
+            
+            <li>
+            
+                <a href="/categories/Android">
+                    
+                        Android
+                    
+                </a>
+            
+            </li>
+            
+        </ul>
+        <hr>
+        <a href="/2016/08/08/translucent-statusbar/">
+            <button class="more-btn">
+                <span>阅读全文 <i class="fa fa-angle-right"></i></span>
+            </button>
+        </a>
+    </footer>
     
 </div>
             
                 <div class="post">
-    <div class="title-wrapper">
+    <header class="title-wrapper">
         
-            <a class="title" href="/2016/08/02/hexo/">
-                终于又双叒叕搭建好我的博客啦
-            </a>
+            <h1>
+                <a class="title" href="/2016/08/02/hexo/">
+                    终于又双叒叕搭建好我的博客啦
+                </a>
+            </h1>
         
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                Aug 2, 2016
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/技术">
-                            
-                                技术
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
+        
+    </header>
     
-    <div class="markdown-body">
+    <section class="markdown-body">
         
             <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
 <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是快速、简洁且高效的博客框架。</p>
 </blockquote>
 <p><img src="http://7xttuv.com2.z0.glb.qiniucdn.com/blog/hexo.PNG" alt=""><br>
         
-    </div>
+    </section>
     
     
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2016/08/02/hexo/">
-                <button class="more-btn">
-                    <span>阅读全文</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
+    <footer class="footer-wrapper">
+        <ul class="description">
+            <li>
+                Aug 2, 2016
+            </li>
+            
+            <li>
+            
+                <a href="/categories/技术">
+                    
+                        技术
+                    
+                </a>
+            
+            </li>
+            
+        </ul>
+        <hr>
+        <a href="/2016/08/02/hexo/">
+            <button class="more-btn">
+                <span>阅读全文 <i class="fa fa-angle-right"></i></span>
+            </button>
+        </a>
+    </footer>
     
 </div>
             
                 <div class="post">
-    <div class="title-wrapper">
+    <header class="title-wrapper">
         
-            <a class="title" href="/2016/05/06/use-of-toolbar/">
-                Toolbar 的使用
-            </a>
+            <h1>
+                <a class="title" href="/2016/05/06/use-of-toolbar/">
+                    Toolbar 的使用
+                </a>
+            </h1>
         
-        <ul class="description">
-            <li>
-                <i class="fa fa-calendar"></i>
-                May 6, 2016
-            </li>
-            
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    
-                        <a href="/categories/Android">
-                            
-                                Android
-                            
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
+        
+    </header>
     
-    <div class="markdown-body">
+    <section class="markdown-body">
         
             <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span></div><div class="line"><span class="tag">    <span class="attr">app:title</span>=<span class="string">"Title"</span> /&gt;</span></div></pre></td></tr></table></figure>
         
-    </div>
+    </section>
     
     
-        <div class="more-wrapper">
-            <div class="left-line"></div>
-            <a href="/2016/05/06/use-of-toolbar/">
-                <button class="more-btn">
-                    <span>阅读全文</span>
-                </button>
-            </a>
-            <div class="right-line"></div>
-        </div>
+    <footer class="footer-wrapper">
+        <ul class="description">
+            <li>
+                May 6, 2016
+            </li>
+            
+            <li>
+            
+                <a href="/categories/Android">
+                    
+                        Android
+                    
+                </a>
+            
+            </li>
+            
+        </ul>
+        <hr>
+        <a href="/2016/05/06/use-of-toolbar/">
+            <button class="more-btn">
+                <span>阅读全文 <i class="fa fa-angle-right"></i></span>
+            </button>
+        </a>
+    </footer>
     
 </div>
             

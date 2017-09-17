@@ -8,8 +8,9 @@
     
 </title>
 <meta name="author" content="Codpoe">
-<meta name="description" content="An elegant blog about technology and life">
-<meta name="keywords" content="blog, technology, frontend, elegant">
+<meta name="description" content="An elegant blog about tech and life">
+<meta name="keywords" content="Blog, Tech, Front-End">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
@@ -17,176 +18,163 @@
 </head>
 <body>
     <header class="header-wrapper 
+     
     ">
 
     <div class="header">
-        <div class="left">
+        <div class="header__normal header__normal--is-post">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        Codpoe
+                    </h1>
+                </a>
+            </div>
+            <ul class="right menu-list">
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/" 
+                                class="normal-menu "
+                                target="_self">
+                                首页
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <span class="category">
+                                分类&nbsp;<i class="fa fa-angle-down"></i>
+                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                            </span>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/archives" 
+                                class="normal-menu "
+                                target="_self">
+                                归档
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/about" 
+                                class="normal-menu "
+                                target="_self">
+                                关于
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/resume" 
+                                class="normal-menu "
+                                target="_blank">
+                                简历
+                            </a>
+                        
+                    </li>
+                
+            </ul>
             <div class="menu-bar">
                 <div class="menu-bar__middle"></div>
             </div>
-            <a href="/" class="header__info">
-                <img src="/img/logo.jpg" alt="logo">
-                <span>Codpoe</span>
-                <!--<span>Front-End Developer</span>-->
-            </a>
-
         </div>
-        <ul class="right">
-            
-            
-                <li>
-                    
-                        <a
-                            href="/" 
-                            class="normal-menu "
-                            target="_self">
-                            首页
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <span class="category">
-                            分类&nbsp;<i class="fa fa-angle-down"></i>
-                            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
-                        </span>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/archives" 
-                            class="normal-menu "
-                            target="_self">
-                            归档
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/about" 
-                            class="normal-menu "
-                            target="_self">
-                            关于
-                        </a>
-                    
-                </li>
-            
-            
-                <li>
-                    
-                        <a
-                            href="/resume" 
-                            class="normal-menu "
-                            target="_blank">
-                            简历
-                        </a>
-                    
-                </li>
-            
-        </ul>
-    </div>
-
-    <div class="drawer">
-        <div
-            class="drawer__header"
-            style="background-image: url(https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg)">
-            
-            <div class="drawer__info">
-                <img src="/img/logo.jpg" alt="logo" class="drawer__logo">
-                <h1 class="drawer__name">Codpoe</h1>
-                <h2 class="drawer__description">Front-End Developer</h2>
+        
+        <div class="header__post-hidden">
+            <div class="header__post-visible">
+                <div class="header__post-holder"></div>
+                <div class="header__post">
+                    <div class="left">
+                        <h1 class="header__post-name">
+                            关于RxJS的数据流
+                        </h1>
+                    </div>
+                    <div class="right">
+                        <ul class="share-links">
+                            <li>
+                                <a class="share-link"
+                                    href="http://service.weibo.com/share/share.php?appkey=3131596266&title=分享文章「关于RxJS的数据流」&url=http://codpoe.me/2017/03/17/rxjs-stream/index.html"
+                                    target="_blank">
+                                    <i class="fa fa-weibo"></i> 分享到微博
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+        
+    </div>
+
+    <div class="header__drawer">
         <ul class="drawer__menu-list">
         
         
-            
-                <li>
-                    <a 
-                        href="/" 
-                        class="drawer__menu "
-                        target="_self">
-                        首页
-                    </a>
-                </li>
-            
         
-        
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/archives" 
-                        class="drawer__menu "
-                        target="_self">
-                        归档
-                    </a>
-                </li>
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/about" 
-                        class="drawer__menu "
-                        target="_self">
-                        关于
-                    </a>
-                </li>
-            
-        
-        
-            
-                <li>
-                    <a 
-                        href="/resume" 
-                        class="drawer__menu "
-                        target="_blank">
-                        简历
-                    </a>
-                </li>
-            
-        
-        </ul>
-        <ul class="drawer__links">
-        
-            
             <li>
-            
-                <a href="mailto:codpoe.me@gmail.com" title="mail">
-                    <i class="fa fa-envelope" style="color: #2D9EDE"></i>
+                <a 
+                    href="/" 
+                    class="drawer__menu "
+                    target="_self">
+                    首页
                 </a>
-            
             </li>
         
-            
+        
+        
+        
+        
+        
+        
             <li>
-            
-                <a href="http://weibo.com/u/2757541610/" target="_blank" title="weibo">
-                    <i class="fa fa-weibo" style="color: #E6162D"></i>
+                <a 
+                    href="/archives" 
+                    class="drawer__menu "
+                    target="_self">
+                    归档
                 </a>
-            
             </li>
         
-            
+        
+        
+        
             <li>
-            
-                <a href="https://github.com/codpoe/" target="_blank" title="github">
-                    <i class="fa fa-github" style="color: #24292E"></i>
+                <a 
+                    href="/about" 
+                    class="drawer__menu "
+                    target="_self">
+                    关于
                 </a>
-            
             </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/resume" 
+                    class="drawer__menu "
+                    target="_blank">
+                    简历
+                </a>
+            </li>
+        
         
         </ul>
     </div>
@@ -199,34 +187,35 @@
     <div class="wrapper">
         <div class="container">
             <div class="post">
-    <div class="title-wrapper">
+    <header class="title-wrapper">
         
-            <span class="title">
-                关于RxJS的数据流
-            </span>
+            <h1>
+                <span class="title">
+                    关于RxJS的数据流
+                </span>
+            </h1>
+        
         
         <ul class="description">
             <li>
-                <i class="fa fa-calendar"></i>
                 Mar 17, 2017
             </li>
             
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
+            <li>
+            
+                <a href="/categories/前端">
                     
-                        <a href="/categories/前端">
-                            
-                                前端
-                            
-                        </a>
+                        前端
                     
-                </li>
+                </a>
+            
+            </li>
             
         </ul>
-    </div>
+        
+    </header>
     
-    <div class="markdown-body">
+    <section class="markdown-body">
         
             <h2 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h2><p>在写 Android 的时候，RxJava 和 RxAndroid 几乎是每个项目的标配，同时，RxJava 也是 Rx 系列里 GitHub star 数最多的，可见 Rx 在 Java 领域的普及度很高，而 RxJava 的各种文章也真心多。而在前端领域，RxJS 就相对没那么流行了。</p>
 <p>至于原因，一方面前端的各种框架 Vue 等等也可以做到类似的功能，有时候并没有必要再引入 RxJS，另一方面是 RxJS 上手有点难（当初入门 RxJava 的时候，扔物线大大的入门文章我反复看了好几遍。。。），还有就是我觉得吧，是 Java 本身的异步有点难用。。。</p>
@@ -255,7 +244,7 @@
 <p>形象地，实际的数据流为：</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">down$</span>:       down-------------down--------</div><div class="line"><span class="symbol">up$</span>:         -----------up----------------</div><div class="line"><span class="symbol">merge</span>:       -----------up----down--------</div><div class="line"><span class="keyword">switchMapTo: </span><span class="keyword">move0-move1------move2-move3-</span></div><div class="line"><span class="keyword">bufferCount: </span>[<span class="keyword">move0, </span><span class="keyword">move1]-[move1, </span><span class="keyword">move2]-[move2, </span><span class="keyword">move3]</span></div><div class="line"><span class="keyword"> </span></div><div class="line"><span class="symbol">result</span>:      [<span class="keyword">move0, </span><span class="keyword">move1]-[move1, </span><span class="keyword">move2]-[move2, </span><span class="keyword">move3]</span></div></pre></td></tr></table></figure>
 <p>然而按照预期想法，<code>move0, move1</code>应是同一条线上的，<code>move2, move3</code>是另一条线上的，所以预期的数据流应是这样的：</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result: <span class="string">[move0, move1]</span>-<span class="string">[move2, move3]</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">result</span>: <span class="selector-attr">[move0, move1]</span><span class="selector-tag">-</span><span class="selector-attr">[move2, move3]</span></div></pre></td></tr></table></figure>
 <p>这显然和实际情况不符，这就是问题所在：<code>bufferCount</code>错误地将两个原本不应该在一起的坐标合并了。所以要解决这个问题，就要改变<code>bufferCount</code>的位置。</p>
 <p>具体地说，就是不能在主数据流里用<code>bufferCount</code>，而应该在每次都是新发射出的<code>mousemove</code>数据流里用，先使坐标们正确地合并在一起，然后才发射到主数据流上。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">down$</span>:       down-------------down--------</div><div class="line"><span class="symbol">up$</span>:         -----------up----------------</div><div class="line"><span class="symbol">merge</span>:       -----------up----down--------</div><div class="line"><span class="keyword">switchMapTo: </span><span class="keyword">move0-move1------move2-move3-</span></div><div class="line"><span class="keyword">- </span><span class="keyword">bufferCount:</span></div><div class="line"><span class="keyword"> </span>            [<span class="keyword">move0, </span><span class="keyword">move1]-[move2, </span><span class="keyword">move3]</span></div><div class="line"><span class="keyword"> </span></div><div class="line"><span class="symbol">result</span>:      [<span class="keyword">move0, </span><span class="keyword">move1]-[move2, </span><span class="keyword">move3]</span></div></pre></td></tr></table></figure>
@@ -266,16 +255,16 @@
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>通过这个『画板』的栗子，可以看出 RxJS 强大的数据操作能力，但是也要时刻注意代码所表示的数据流是否真的如你的预期，所以要注意操作符序列的顺序。最后，画数据流图会有很大帮助。</p>
 
         
-    </div>
+    </section>
     
     
 </div>
             <div class="prev-next">
 
-    <a class="prev" href="/2017/06/06/scope-chain/">上一篇</a>
+    <a class="prev" href="/2017/06/06/scope-chain/"><i class="fa fa-angle-left"></i> JS的作用域链</a>
 
 
-    <a class="next" href="/2017/02/18/ripple-effect/">下一篇</a>
+    <a class="next" href="/2017/02/18/ripple-effect/">水波纹效果的实现 <i class="fa fa-angle-right"></i></a>
 
 </div>
 
