@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        听说你用过koa？写一下compose吧
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about tech and life">
+<meta name="keywords" content="Blog, Tech, Front-End">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    <header class="header-wrapper 
+     
+    ">
+
+    <div class="header">
+        <div class="header__normal header__normal--is-post">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        Codpoe
+                    </h1>
+                </a>
+            </div>
+            <ul class="right menu-list">
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/" 
+                                class="normal-menu "
+                                target="_self">
+                                首页
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <span class="category">
+                                分类&nbsp;<i class="fa fa-angle-down"></i>
+                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                            </span>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/archives" 
+                                class="normal-menu "
+                                target="_self">
+                                归档
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/about" 
+                                class="normal-menu "
+                                target="_self">
+                                关于
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/resume" 
+                                class="normal-menu "
+                                target="_blank">
+                                简历
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+            <div class="menu-bar">
+                <div class="menu-bar__middle"></div>
+            </div>
+        </div>
+        
+        <div class="header__post-hidden">
+            <div class="header__post-visible">
+                <div class="header__post-holder"></div>
+                <div class="header__post">
+                    <div class="left">
+                        <h1 class="header__post-name">
+                            听说你用过koa？写一下compose吧
+                        </h1>
+                    </div>
+                    <div class="right">
+                        <ul class="share-links">
+                            <li>
+                                <a class="share-link"
+                                    href="http://service.weibo.com/share/share.php?appkey=3131596266&title=分享文章「听说你用过koa？写一下compose吧」&url=http://codpoe.me/2017/09/26/koa-compose/index.html"
+                                    target="_blank">
+                                    <i class="fa fa-weibo"></i> 分享到微博
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="header__drawer">
+        <ul class="drawer__menu-list">
+        
+        
+        
+            <li>
+                <a 
+                    href="/" 
+                    class="drawer__menu "
+                    target="_self">
+                    首页
+                </a>
+            </li>
+        
+        
+        
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/archives" 
+                    class="drawer__menu "
+                    target="_self">
+                    归档
+                </a>
+            </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/about" 
+                    class="drawer__menu "
+                    target="_self">
+                    关于
+                </a>
+            </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/resume" 
+                    class="drawer__menu "
+                    target="_blank">
+                    简历
+                </a>
+            </li>
+        
+        
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <header class="title-wrapper">
+        
+            <h1>
+                <span class="title">
+                    听说你用过koa？写一下compose吧
+                </span>
+            </h1>
+        
+        
+        <ul class="description">
+            <li>
+                Sep 26, 2017
+            </li>
+            
+            <li>
+            
+                <a href="/categories/前端">
+                    
+                        前端
+                    
+                </a>
+            
+            </li>
+            
+        </ul>
+        
+    </header>
+    
+    <section class="markdown-body">
+        
+            <p>这段时间也面试挺多家的了，基本都是二面挂😂。深感找工作之不易，心累，同时也认识到自己的很多不足，要继续努力学习。</p>
+<p>在 CVTE 二面的时候，面试官看我简历上面写着玩过 koa，然后就出了下面这道题，瞬间懵比…没想到我简历只写了个<strong>了解</strong>Node.js，也会被问及有关源码的东西，虽然看过一点，但也忘得七七八八了，挺虚的。不说了，先看题吧。</p>
+<blockquote>
+<p>其实<code>compose</code>函数可以说是 koa 中间件的核心了（koa 核心代码相当精简，叹为观止，连我这渣渣都能看个大概😂）。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目大概如下，叫我实现 compose 函数，以至于得到预期的输出。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</div><div class="line">    next();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'end foo'</span>);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">next</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'world'</span>);</div><div class="line">    next();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'end bar'</span>);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> middleware = [foo, bar];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// do something here</span></div><div class="line">&#125;</div><div class="line"> </div><div class="line">compose(middleware)();</div><div class="line"><span class="comment">// -&gt;</span></div><div class="line"><span class="comment">// 'hello'</span></div><div class="line"><span class="comment">// 'world'</span></div><div class="line"><span class="comment">// 'end foo'</span></div><div class="line"><span class="comment">// 'end bar'</span></div></pre></td></tr></table></figure></p>
+<h2 id="持续懵比"><a href="#持续懵比" class="headerlink" title="持续懵比"></a>持续懵比</h2><p>即使心虚也要硬着头皮上了，记得当时有点紧张，以至于感觉耳朵在发热，尴尬。</p>
+<ul>
+<li><p>当看到<code>compose(middleware)()</code>的时候，就可以知道 compose 函数要返回一个 function 了:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">middleware</span>) </span>&#123;</div><div class="line">    <span class="comment">// do something here</span></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// do something here</span></div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>其次，要像 koa 那样将各个中间件函数收尾连接起来的话，next 函数是个关键点，调用 next 就会执行下一个函数。</p>
+</li>
+</ul>
+<p>想到这，我就开始考虑怎么把下一个函数传给当前函数的 next 了，然后写出了下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">middleware.forEach(<span class="function">(<span class="params">fn, index</span>) =&gt;</span> &#123;</div><div class="line">	fn(middleware[index + <span class="number">1</span>]);</div><div class="line">&#125;)；</div></pre></td></tr></table></figure></p>
+<p>233，当时写完后看了两眼，我就赶紧删掉了，脑补面试官内心：这孩子脑子肯定秀逗了😂…然后，我就挂在这里了。</p>
+<p>事后回顾了一下 koa-compose 的源码，发现我的想法太粗暴了！上面的 next 的确是指向了下一个中间件函数，但是 forEach 的每个函数都会再执行一遍，但是中间件的要求是下一个函数只能通过 next 来触发。这样的话，可以考虑中间件函数的动态注入了，而不是一次性注入。</p>
+<p>也就是说每次 next 的时候，都要进行一次注入，将下一个中间件函数注入到即将被调用的中间件函数中。然而如果还是像上面这样<code>fn(middleware[index + 1])</code>，显然是不行的，因为 index 是需要动态改变的。</p>
+<p>其实仔细一看，就会发现 koa 的中间件模式有点递归的味道！看图：<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fjxf9csfv5j30g20a9jrb.jpg" alt=""></p>
+<p>信了吧？那是不是意味着可以用递归的方式来实现中间件模式呢？这个思路是正确的，但还存在一个问题，各个中间件函数是不同的，并且已经是给定的，留给我们把控的只有 next 参数，所以 next 应是突破口了。</p>
+<p>综上，</p>
+<ul>
+<li>下一个中间件函数需要动态注入，则每个中间件都必须知道自己的位置<code>i</code>，这样下一中间件就是<code>i + 1</code>的事情了;</li>
+<li>递归思想。既然不能直接修改各个中间件，那么可以在中间件函数外再包一层函数，边界的控制由这个函数实现，递归的进行由 next 实现。</li>
+</ul>
+<p>看图最清晰明了：<br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fjxgkq1epij30hn0e4gll.jpg" alt=""></p>
+<p>可以看到，递归的进行实际上仍然是由 next 负责的，外层函数只是做一些边界控制的工作。</p>
+<blockquote>
+<p>其实这层外嵌的函数就相当于一个闭包，继而我们可以将每个中间件的位置<code>i</code>存储在这个闭包当中。也正由于闭包的存在，递归才得以进行下去。关于闭包的问题，可以看下我之前写的<a href="http://codpoe.me/2017/06/06/scope-chain/">JS的作用域链</a></p>
+</blockquote>
+<h2 id="撸码了"><a href="#撸码了" class="headerlink" title="撸码了"></a>撸码了</h2><p>先动手实现这个外嵌的函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">inject</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> fn = middleware[i];</div><div class="line">    <span class="keyword">if</span> (!fn) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fn(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 这个函数就是每个中间件的 next</span></div><div class="line">        <span class="keyword">return</span> inject(i + <span class="number">1</span>); <span class="comment">// 进行递归</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>寥寥几行，包含的信息可不少啊。实现了 next 函数的注入之后，一切都好办了，完整的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">middleware</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(middleware)) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> fn <span class="keyword">of</span> middleware) &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inject</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> fn = middleware[i];</div><div class="line">        <span class="keyword">if</span> (!fn) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fn(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> inject(i + <span class="number">1</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> inject(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然，实际的 koa-compose 代码并不仅仅如此，因为 koa 的中间件都要是 async 函数，next 的调用需要加上 await。不过思想是不变的，只是将某些地方改为 Promise 而已。</p>
+<p>叹为观止！</p>
+
+        
+    </section>
+    
+    
+</div>
+            <div class="prev-next">
+
+
+    <a class="next" href="/2017/08/12/long-shadow/">CSS实现长投影 <i class="fa fa-angle-right"></i></a>
+
+</div>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2017/09/26/koa-compose/';
+            this.page.identifier = '2017/09/26/koa-compose/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="https://github.com/codpoe/hexo-theme-poem/">Poem</a>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>
