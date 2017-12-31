@@ -51,7 +51,7 @@
                         
                             <span class="category">
                                 分类&nbsp;<i class="fa fa-angle-down"></i>
-                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
                             </span>
                         
                     </li>
@@ -215,6 +215,56 @@
 
 
         <div class="container">
+            
+                <div class="post">
+    <header class="title-wrapper">
+        
+            <h1>
+                <a class="title" href="/2016/09/20/swipe-refresh-layout/">
+                    SwipeRefreshLayout的圈圈无法显示的问题
+                </a>
+            </h1>
+        
+        
+    </header>
+    
+    <section class="markdown-body">
+        
+            <blockquote>
+<p><code>onResume()</code>这个函数在 Activity 变得可见时被调用，执行完<code>onResume()</code>之后，Activity 就会请求 AMS 渲染它所管理的视图。 </p>
+</blockquote>
+<p>这是《从小工到专家》书上的说法，也没错。</p>
+<p>最近在使用<code>SwipeRefreshLayout</code>时，想在 Activity 一可见时就调用<code>setRefreshing(true)</code>，达到自动刷新的效果，以期能有更好的用户体验，这也是大多 App 所采取的做法。于是乎，我就在<code>onResume()</code>中调用了<code>mRefreshLay.setRefreshing(true)</code>，按道理应该是没什么问题的，我就开心地边等编译边玩手机。<br>
+        
+    </section>
+    
+    
+    <footer class="footer-wrapper">
+        <ul class="description">
+            <li>
+                Sep 20, 2016
+            </li>
+            
+            <li>
+            
+                <a href="/categories/Android">
+                    
+                        Android
+                    
+                </a>
+            
+            </li>
+            
+        </ul>
+        <hr>
+        <a href="/2016/09/20/swipe-refresh-layout/">
+            <button class="more-btn">
+                <span>阅读全文 <i class="fa fa-angle-right"></i></span>
+            </button>
+        </a>
+    </footer>
+    
+</div>
             
                 <div class="post">
     <header class="title-wrapper">

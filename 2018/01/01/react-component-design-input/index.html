@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>
+    
+        React组件设计 - Input
+    
+</title>
+<meta name="author" content="Codpoe">
+<meta name="description" content="An elegant blog about tech and life">
+<meta name="keywords" content="Blog, Tech, Front-End">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    <header class="header-wrapper 
+     
+    ">
+
+    <div class="header">
+        <div class="header__normal header__normal--is-post">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        Codpoe
+                    </h1>
+                </a>
+            </div>
+            <ul class="right menu-list">
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/" 
+                                class="normal-menu "
+                                target="_self">
+                                首页
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <span class="category">
+                                分类&nbsp;<i class="fa fa-angle-down"></i>
+                                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+                            </span>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/archives" 
+                                class="normal-menu "
+                                target="_self">
+                                归档
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/about" 
+                                class="normal-menu "
+                                target="_self">
+                                关于
+                            </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        
+                            <a
+                                href="/resume" 
+                                class="normal-menu "
+                                target="_blank">
+                                简历
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+            <div class="menu-bar">
+                <div class="menu-bar__middle"></div>
+            </div>
+        </div>
+        
+        <div class="header__post-hidden">
+            <div class="header__post-visible">
+                <div class="header__post-holder"></div>
+                <div class="header__post">
+                    <div class="left">
+                        <h1 class="header__post-name">
+                            React组件设计 - Input
+                        </h1>
+                    </div>
+                    <div class="right">
+                        <ul class="share-links">
+                            <li>
+                                <a class="share-link"
+                                    href="http://service.weibo.com/share/share.php?appkey=3131596266&title=分享文章「React组件设计 - Input」&url=http://codpoe.me/2018/01/01/react-component-design-input/index.html"
+                                    target="_blank">
+                                    <i class="fa fa-weibo"></i> 分享到微博
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="header__drawer">
+        <ul class="drawer__menu-list">
+        
+        
+        
+            <li>
+                <a 
+                    href="/" 
+                    class="drawer__menu "
+                    target="_self">
+                    首页
+                </a>
+            </li>
+        
+        
+        
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/archives" 
+                    class="drawer__menu "
+                    target="_self">
+                    归档
+                </a>
+            </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/about" 
+                    class="drawer__menu "
+                    target="_self">
+                    关于
+                </a>
+            </li>
+        
+        
+        
+        
+            <li>
+                <a 
+                    href="/resume" 
+                    class="drawer__menu "
+                    target="_blank">
+                    简历
+                </a>
+            </li>
+        
+        
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+</header>
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="post">
+    <header class="title-wrapper">
+        
+            <h1>
+                <span class="title">
+                    React组件设计 - Input
+                </span>
+            </h1>
+        
+        
+        <ul class="description">
+            <li>
+                Jan 1, 2018
+            </li>
+            
+            <li>
+            
+                <a href="/categories/前端">
+                    
+                        前端
+                    
+                </a>
+            
+            </li>
+            
+        </ul>
+        
+    </header>
+    
+    <section class="markdown-body">
+        
+            <p>Input 在一个表单里面具有极高的地位。提及表单，相信大家脑海里首先浮现的就是 Input，所以如果要实现比较完整的表单，我的选择是先实现 Input，然后才是 Checkbox，Radio 之类。</p>
+<a id="more"></a>
+<h2 id="type-的划分"><a href="#type-的划分" class="headerlink" title="type 的划分"></a>type 的划分</h2><p>一个原生 HTML input 元素，它的 <code>type</code> 有很多可选值，如：<code>text</code>，<code>password</code>，<code>number</code>，<code>checkbox</code>，<code>radio</code>，<code>date</code> 等等，集万千功能于一身，简直万金油啊，但是在啥都组件化、啥都模块化的今天当中，我觉得这种集大成者不仅让用户的使用体验得不到保证，也让开发者难以维护下去。因此，我把一些比较特别，需要另外专门设计的 <code>type</code> 独立出去，例如 <code>checckbox</code>，<code>date</code> 等。</p>
+<p>把一些功能独立出去之后，Input 组件的设计以 <code>text</code>，<code>password</code> 为主也没什么大问题，加 <code>number</code> 也行，要加原生的 <code>min</code> / <code>max</code> 的话也可以，但这几个都可以用后续的 Form 组件的表单验证功能代替一下，并且可以获得更为友好的错误提示😋</p>
+<h2 id="功能分析"><a href="#功能分析" class="headerlink" title="功能分析"></a>功能分析</h2><p>Input 组件，不用废话最主要的功能是输入，原本的 HTML input 元素的输入功能就很好啦，虽然在 React 里面 input 是受控组件，但这就不在这一节讨论了。</p>
+<p>然后，我们经常可以看到这几种表单的外观设计：</p>
+<ul>
+<li><p>锤子官网</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fmzbver0k7j30mk0i0gmg.jpg" alt="锤子官网 t.tt"></p>
+</li>
+<li><p>有赞官网</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fmzc00ahmlj30lg08ot94.jpg" alt="有赞官网 youzan.com"></p>
+</li>
+</ul>
+<p>可以看到，这两种 Input 组件都有一个共同的特点：都有前缀 / 后缀。啥是前缀后缀呢？按锤子的图，人像和钥匙图标就是前缀；按有赞的图，<code>登录密码</code>和<code>验证码</code>是前缀，验证码图片是后缀。</p>
+<p>所以我认为在输入框前后加点东西是一个常见需求。再细分一下的话，前后缀有图标、按钮、图片，甚至下拉框…太多太夸张了，都不敢想了。既然如此，那就把这块挖空了吧，留个空位，让开发者自行把后续内容填进去，这让 Input 组件拥有更好的灵活性和兼容性。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="大致结构"><a href="#大致结构" class="headerlink" title="大致结构"></a>大致结构</h3><p>因为有前缀和后缀，所以可以将 Input 组件分为左中右三块，中间自然就是 input 元素了</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    &#123;prefix &amp;&amp;</div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">            &#123;prefix&#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="tag">&lt;<span class="name">input</span> /&gt;</span></div><div class="line"> </div><div class="line">    &#123;suffix &amp;&amp;</div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">            &#123;suffix&#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这里只是演示个大致的结构，我略去了其他属性。</p>
+<h3 id="受控"><a href="#受控" class="headerlink" title="受控"></a>受控</h3><p>当一个 React 组件需要更新的时候，主要有两种方式：</p>
+<ul>
+<li><p>由外部传进新的 <code>props</code></p>
+</li>
+<li><p>自身调用 <code>setState()</code> 方法</p>
+</li>
+</ul>
+<p>在 React 里面 input 是受控组件，所以我们封装的 Input 组件也应该是受控的。如果通过 <code>setState()</code> 的方式更新自身状态，外部是难以通过直观优雅的方式获取到输入值的。既然这个组件主要是依靠 <code>props</code> 来更新的，那也得先把值暴露给父级组件，以让父级组件决定是否对 Input 组件进行更新。</p>
+<p>而如果子组件要与父级组件通信：</p>
+<ul>
+<li><p>父组件粗暴直接地获取子组件的数据</p>
+</li>
+<li><p>父组件将一个函数的引用（乃至自身）传递给子组件，而后子组件在调用这个函数时顺便将数据作为参数，这样父组件就间接拿到子组件传递过来的数据了</p>
+</li>
+</ul>
+<p>对于第一种通信方式，React 是反对的，因为这样会搞乱数据流，而清晰的数据流向对于一个系统而言是至关重要的，不仅可以减少 BUG 隐藏的机会，也方便后续的维护和高层级组件的集成。</p>
+<p>对于第二种通信方式，其实还分为两种途径，一是将函数作为 <code>props</code> 传递给子组件，然而有时候通信双方并不是直接相连的父子组件，而是相隔一个或多个组件的祖孙后代组件，这种情况下虽然还能继续将函数通过 <code>props</code> 层层传递下去，但也是挺麻烦的了。还有种更特殊的情景是，我们并不能明确知道两个组件之间将会有多少层中间组件，可能是 0 层，也可能是很多层，这就没办法把 <code>props</code> 层层传递下去了，因为存在着未知的组件。综上就有了第二种途径，上层组件将函数放在 <code>context</code> 上下文当中，下层组件通过 <code>context</code> 获得这个引用，具体 api 可以查看相关文档。</p>
+<p>有点扯远了，回到 Input 组件的设计上来。按刚才说的，既然 Input 是受控组件，我们就将一个 <code>onChange</code> 函数作为 prop 传递进来，但是我并不直接将这个函数挂在真正的 input 元素的 <code>onChange</code> 事件上，而是在组件内部再定义一个 <code>handleChange</code> 函数，而后在这里面调用传递进来的 props 上的 <code>onChange</code> 方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">handleChange(ev) &#123;</div><div class="line">    <span class="keyword">const</span> &#123; onChange &#125; = <span class="keyword">this</span>.props;</div><div class="line">    onChange &amp;&amp; onChange(&#123; <span class="attr">value</span>: ev.target.value &#125;, ev);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后再将此函数挂在 input 元素上：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line"><span class="tag">    <span class="attr">type</span>=<span class="string">&#123;type&#125;</span></span></div><div class="line"><span class="tag">    <span class="attr">name</span>=<span class="string">&#123;name&#125;</span></span></div><div class="line"><span class="tag">    <span class="attr">value</span>=<span class="string">&#123;value&#125;</span></span></div><div class="line"><span class="tag">    <span class="attr">placeholder</span>=<span class="string">&#123;placeholder&#125;</span></span></div><div class="line"><span class="tag">    <span class="attr">onChange</span>=<span class="string">&#123;this.handleChange&#125;</span></span></div><div class="line"><span class="tag">/&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="父组件获取数据的方式"><a href="#父组件获取数据的方式" class="headerlink" title="父组件获取数据的方式"></a>父组件获取数据的方式</h3><p>在上面可以看到：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">onChange(&#123; <span class="attr">value</span>: ev.target.value &#125;, ev);</div></pre></td></tr></table></figure>
+<p>这里我把 <code>value</code> 放进对象里面，并且作为函数的第一个参数，而第二个参数才是事件。这是为了对外保持一致的数据获取的接口，当然，这只是我个人的喜好，这里说下我的考量：</p>
+<ul>
+<li><p>在开发了一些组件之后，我发现各组件不同的数据获取方式（或通过 event，或直接作为第一个参数，或作为对象的一部分）常常让我感到困惑，以至于要去翻看文档或组件的实现。所以我觉得有必要统一数据获取的接口，简化 api。</p>
+</li>
+<li><p>之所以选择第一个参数，是我看到 <code>bind</code> 方法会将数据作为在函数的前部分参数，而把 event 置后，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick.bind(this,</span> <span class="attr">arg1</span>, <span class="attr">arg2</span>)&#125;&gt;</span></div></pre></td></tr></table></figure>
+<p>最终调用时会变成 <code>handleClick(arg1, arg2, event)</code>。</p>
+</li>
+<li><p>将数据放进一个对象里，是因为或许数据不止一个，当有多个数据的时候，把数据全横列在参数里是不够优雅的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">handleClick(value1, value2, value3, ..., event);</div></pre></td></tr></table></figure>
+<p>为了统一，我选择放进对象里，即使只有一条数据。</p>
+</li>
+</ul>
+<h3 id="自身状态"><a href="#自身状态" class="headerlink" title="自身状态"></a>自身状态</h3><p>虽说 Input 是受控组件，但这并非说它不能拥有自己的状态，受控只是为了通过清晰的数据流将重要数据传递给外部，对于一个表单组件来说，输入值是第一重要的，是外部必须获取的。而一些不是很重要的数据，比如获得焦点 <code>focused</code>，就没必要暴露给外部了，组件内部自给自足就行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">        focused: <span class="literal">false</span></div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    <span class="keyword">this</span>.handleFocus = <span class="keyword">this</span>.handleFocus.bind(<span class="keyword">this</span>);</div><div class="line">    <span class="keyword">this</span>.handleBlur = <span class="keyword">this</span>.handleBlur.bind(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"> </div><div class="line">handleFocus(ev) &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">        focused: <span class="literal">true</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">handleBlur(ev) &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">        focused: <span class="literal">false</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个 <code>focused</code> 状态有什么用呢？其实是用来控制样式的。</p>
+<h3 id="CSS样式"><a href="#CSS样式" class="headerlink" title="CSS样式"></a>CSS样式</h3><h3 id="细节控制"><a href="#细节控制" class="headerlink" title="细节控制"></a>细节控制</h3><p>写 CSS 样式的时候，我给中间的 input 和两边的前后缀 div 都设置了左右内边距，然后前后缀的内容都是居中的。在前后缀是字符串和图标时，这种样式是完全没问题的。前面说了，前缀和后缀是五花八门的，啥都有，虽然比较普通的情形是字符串和图标，但如果想占满整个预留区，即不留任何内边距的话，就需要我们做进一步的控制了。</p>
+<p>为此，我在 <code>render</code> 里面判断一下前后缀是什么类型的元素，如果是字符串或者图标，则另作样式控制：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">isStrOrIcon(fix) &#123;</div><div class="line">    <span class="keyword">return</span> (<span class="keyword">typeof</span> fix === <span class="string">'string'</span>)</div><div class="line">        || (fix.props.className &amp;&amp; fix.props.className.startsWith(<span class="string">'icon'</span>));</div><div class="line">&#125;</div><div class="line"> </div><div class="line">render() &#123;</div><div class="line">    &#123;prefix &amp;&amp;</div><div class="line">        &lt;div </div><div class="line">            className=&#123;<span class="string">`z-input__prefix</span></div><div class="line"><span class="string">            <span class="subst">$&#123;<span class="keyword">this</span>.isStrOrIcon(prefix)<span class="string">'z-input__prefix--str'</span> : <span class="string">''</span>&#125;</span>`</span>&#125;</div><div class="line">        &gt;</div><div class="line">            &#123;prefix&#125;</div><div class="line">        &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    &#125;</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<h2 id="没了"><a href="#没了" class="headerlink" title="没了"></a>没了</h2><p>好像也没什么讲的了，剩下一些原生属性 <code>autoFocus</code>、<code>readOnly</code>、<code>disabled</code>，还有样式 props，比如 <code>outline</code>、<code>round</code> 之类的。</p>
+
+        
+    </section>
+    
+    
+</div>
+            <div class="prev-next">
+
+
+    <a class="next" href="/2017/09/26/koa-compose/">听说你用过koa？写一下compose吧 <i class="fa fa-angle-right"></i></a>
+
+</div>
+
+
+            <section class="comments">
+                
+    <div id="disqus_thread">
+    </div>
+    <script>
+        var disqus_shortname = 'codpoe';
+        var disqus_config = function() {
+            this.page.url = 'http://codpoe.me/2018/01/01/react-component-design-input/';
+            this.page.identifier = '2018/01/01/react-component-design-input/';
+        };
+        (function() {
+            var d = document,
+                s = d.createElement('script');
+            s.async = true;
+            s.setAttribute('data-timestamp', +new Date());
+            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    
+                            
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="copyright">
+        <i class="fa fa-copyright"></i>&nbsp;2017&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;Codpoe
+    </div>
+    <div class="info">
+        Powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Theme - <a href="https://github.com/codpoe/hexo-theme-poem/">Poem</a>
+    </div>
+</footer>
+    </div>
+    <aside class="toc-wrapper">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#type-的划分"><span class="toc-text">type 的划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能分析"><span class="toc-text">功能分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大致结构"><span class="toc-text">大致结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#受控"><span class="toc-text">受控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#父组件获取数据的方式"><span class="toc-text">父组件获取数据的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自身状态"><span class="toc-text">自身状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS样式"><span class="toc-text">CSS样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#细节控制"><span class="toc-text">细节控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#没了"><span class="toc-text">没了</span></a></li></ol>
+</aside>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>
